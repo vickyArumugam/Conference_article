@@ -7,9 +7,11 @@ import Services from "../../Components/Services/Services";
 import TestimonialCarousel from "../Banner/Carousel";
 import AboutSec2 from "../../Components/About/Aboutsec2";
 import FindJournalHome from "../../Components/FindJournal/findJournalHome";
+import PricingPlans from "../../Shared/Components/About/PricingPlans";
 
 const Home = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -20,31 +22,25 @@ const Home = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-  
+
   return (
     <>
       <Hero />
-      <AboutMain/>
-      <Banner/>
-      <Services/>
-      < FindJournalHome/>
+      <AboutMain />
+      <Banner />
+      <Services />
+      <FindJournalHome />
+      <AboutSec2 />
+      <TestimonialCarousel />
+      
+      {/* Add ID here */}
+      <div id="pricing-plans">
+        <PricingPlans />
+      </div>
 
-  
-      <AboutSec2/>
-      <TestimonialCarousel/>
-      <ButtonRight/>
-   
+      <ButtonRight />
     </>
   );
 };
 
 export default Home;
-
-
-      {/* <ArticleBanner/> */}
-      {/* <GrowthChart/> */}
-      {/* <ContactBanner/> */}
-      {/* <CurrentProjects/> */}
-      {/* <PolicyBanner/> */}
-      {/* <FindJournal/> */}
-      {/* <ReviewSection/> */}

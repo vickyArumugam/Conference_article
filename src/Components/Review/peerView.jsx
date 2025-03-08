@@ -1,6 +1,9 @@
 
 import React from "react";
 import { Star, FileText, User } from "lucide-react";
+import PeerReviewHero from "./ReviewHero";
+import Banner from "../../Core/Banner/Banner";
+import BusinessInfographic from "./BusinessInfographic";
 
 const reviews = [
   {
@@ -31,21 +34,19 @@ const reviews = [
 
 const ReviewSection = () => {
   return (
-    <section className="py-16 bg-gray-100">
+    <>
+     <PeerReviewHero/>
+    <Banner/>
+    <BusinessInfographic/>
+
+     <section className="py-16 bg-gray-100">
       <div className="max-w-6xl mx-auto px-6">
         {/* Section Heading */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-            Peer Reviews & Author Feedback
-          </h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>
-          <p className="text-lg text-gray-600 mt-4">
-            Insights from researchers and authors who have published with us.
-          </p>
-        </div>
+       
+       
 
         {/* Reviews Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
           {reviews.map((review) => (
             <div
               key={review.id}
@@ -77,6 +78,10 @@ const ReviewSection = () => {
         </div>
       </div>
     </section>
+    {/* <JournalSubmissionInfographic/> */}
+
+    </>
+    
   );
 };
 

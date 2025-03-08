@@ -2,7 +2,7 @@ import React from "react";
 
 const CompanyDetails = () => {
   return (
-    <div className="flex flex-col-reverse lg:flex-row items-center justify-center px-6 md:px-12 py-16 bg-gray-50 min-h-[500px] lg:min-h-[600px]">
+    <div className="lg:w-max-7xl flex flex-col-reverse lg:flex-row items-center justify-center px-6 md:px-12 py-16 bg-gray-50 min-h-[500px] lg:min-h-[600px] ">
       {/* Right: Text Section (Appears first on mobile) */}
       <div className="w-full lg:w-4/12 flex justify-center">
         <img
@@ -14,12 +14,12 @@ const CompanyDetails = () => {
 
 
       {/* Left: Image Section */}
-      <div className="w-full lg:w-3/6 text-center lg:text-left px-6 md:px-10 lg:px-16">
+      <div className="w-full lg:w-[40%] text-center lg:text-left px-6 md:px-10 lg:px-16">
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 border-l-4 border-blue-500 pl-4 leading-snug">
           <span className="text-blue-600">Articles Publication</span> is an
           academic writing assistance company.
         </h2>
-        <p className="text-gray-700 mt-4 text-base sm:text-lg md:text-xl leading-relaxed">
+        <p className="text-gray-700 mt-4 text-base sm:text-lg md:text-xl leading-relaxed text-justify">
           We provide our help to numerous clients looking for a professional
           writing service. Articles Publication was established in 2006, during
           the early stages of academic writing platforms. Over time, it has

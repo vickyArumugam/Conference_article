@@ -1,6 +1,6 @@
 export default function PricingPlans() {
     return (
-      <div className="min-h-auto flex items-center justify-center bg-gray-50 p-12">
+      <div className="  min-h-auto flex items-center justify-center bg-white p-12">
         <div className="text-center my-6">
           <span className="text-blue-600 font-semibold uppercase text-lg">Pricing</span>
           <h2 className="text-5xl font-bold mt-4">Choose your plan</h2>
@@ -40,7 +40,7 @@ export default function PricingPlans() {
   
   function PlanCard({ title, price, features, missingFeatures = [], buttonColor }) {
     return (
-      <div className="bg-white p-10 rounded-2xl shadow-lg scale-105">
+      <div className="bg-white p-10 rounded-2xl shadow-lg scale-105 space-x-15 mt-6">
         <span className={`px-4 py-2 text-lg font-semibold rounded-full ${buttonColor} text-white`}>{title}</span>
         <h3 className="text-5xl font-bold my-4">{price}</h3>
         <p className="text-gray-500 text-lg">monthly payment</p>

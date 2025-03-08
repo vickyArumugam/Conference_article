@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation(); // Get current page location
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,11 +25,13 @@ const Header = () => {
     >
       <div className="max-w-[90%] mx-auto flex justify-between items-center px-6 h-full lg:max-w-[80%]">
         <div className="text-2xl font-bold">
-          <img
-            src="/images/logoArtboard 1 (1).png"
-            className="w-[100px] sm:w-[60px] md:w-[90px] lg:w-[150px]"
-            alt="Logo"
-          />
+          <Link to="/">
+            <img
+              src="/images/logoArtboard 1 (1).png"
+              className="w-[100px] sm:w-[60px] md:w-[90px] lg:w-[150px] cursor-pointer"
+              alt="Logo"
+            />
+          </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -49,6 +52,7 @@ const Header = () => {
             {[
               { path: "/", label: "Home" },
               { path: "/about", label: "About" },
+              { path: "/publish", label: "Journal publish" },
               { path: "/review", label: "Review Process" },
               { path: "/Journal", label: "Find a Journal" },
               { path: "/register", label: "Register" },
@@ -57,7 +61,11 @@ const Header = () => {
               <li key={path}>
                 <Link
                   to={path}
-                  className="relative text-black hover:text-blue-500 pb-2 hover:border-b-2 hover:border-blue-500 transition-all"
+                  className={`relative pb-2 transition-all ${
+                    location.pathname === path
+                      ? "text-blue-600 border-b-2 border-blue-600 font-semibold"
+                      : "text-black hover:text-blue-500 hover:border-b-2 hover:border-blue-500"
+                  }`}
                 >
                   {label}
                 </Link>

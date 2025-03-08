@@ -6,7 +6,7 @@ const Hero = () => {
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-10">
         <div className="lg:w-1/2 text-left">
           <h3 className="text-blue-500 italic text-lg">Premium Services</h3>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mt-2">
+          <h1 className="text-4xl md:text-5xl lg:text-5xl font-bold text-gray-900 mt-2">
             Your Source for Insightful Articles & Unfiltered Perspectives
           </h1>
           <p className="text-gray-600 text-base mt-4">

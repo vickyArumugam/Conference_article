@@ -22,12 +22,12 @@ const About = () => {
 
   return (
     <section id="about" className="bg-gray-50 py-12 px-4 md:px-8 lg:px-16">
-      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-10 md:gap-6">
+      <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center md:gap-6 lg:gap-20">
         {/* Left Side - Image Slider */}
         <div className="lg:w-2/5 w-full rounded-lg overflow-hidden">
           <Slider {...sliderSettings}>
             {images.map((img, index) => (
-              <div key={index} className="h-64 md:h-72 lg:h-80">
+              <div key={index} className="h-80 md:h-96 lg:h-[450px]">
                 <img
                   src={img}
                   alt={`Slide ${index + 1}`}

@@ -3,7 +3,7 @@ import { CheckCircle, Award } from "lucide-react";
 
 const AboutSection = () => {
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-between px-6 md:px-12 lg:px-20 py-16 bg-white w-[90%] max-w-7xl mx-auto">
+    <div className="flex flex-col lg:flex-row items-center justify-between px-6 md:px-12 lg:px-20 py-16 w-[90%] max-w-7xl mx-auto">
       
       <div className="lg:w-[45%] text-center lg:text-left"> 
         <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-snug">
