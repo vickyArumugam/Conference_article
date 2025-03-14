@@ -1,4 +1,4 @@
-export default function PublishSection() {
+export default function   PublishSection() {
     const cards = [
       {
         title: "Get ready to publish",
@@ -27,15 +27,14 @@ export default function PublishSection() {
     ];
   
     return (
-      <section className="py-16 px-6 lg:px-20 bg-gray-50 text-center">
+      <section className="py-16 px-6 lg:px-24 bg-gray-50 text-center">
         {/* Title */}
         <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
           Prepare & Submit Your Paper
         </h2>
-        <div className="w-12 h-1 bg-blue-600 mx-auto mt-4 mb-10"></div>
-  
+        <div className="w-20 h-1 bg-blue-600 mx-auto my-6"></div>
         {/* Cards Section */}
-        <div className="grid md:grid-cols-2 gap-x-22 gap-y-16 max-w-6xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-x-22 gap-y-22 max-w-6xl mx-auto mt-10">
           {cards.map((card, index) => (
             <div
               key={index}

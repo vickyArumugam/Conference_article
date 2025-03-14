@@ -2,12 +2,13 @@ import React from "react";
 
 const PeerReviewHero = () => {
   return (
-    <section className="bg-gray-100 py-20 px-8 md:px-16 lg:px-32 text-gray-900">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-gray-100 py-16 px-8 md:px-16 lg:px-24 text-gray-900">
+      <div className="max-w-[72%] mx-auto">
         {/* Role of Editor & Reviewer */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
           <div>
             <h2 className="text-3xl font-bold">Role of the Journal Editor</h2>
+            
             <p className="mt-3 text-lg text-gray-700 text-justify w-[80%]">
               The editor decides whether your paper fits the aims and scope of
               the journal, then selects the reviewers and guides the paper
@@ -27,15 +28,7 @@ const PeerReviewHero = () => {
         {/* Review Process */}
         <div className="mt-32  text-center">
           <h2 className="text-5xl font-bold text-blue-500">The Journal Review Process</h2>
-          <p className="mt-6 text-lg text-gray-700">
-            Download and keep your step-by-step guide (PDF).
-          </p>
-          <a
-            href="#"
-            className="mt-5 inline-block bg-green-600 text-white text-lg font-bold px-8 py-4 rounded-full shadow-md hover:bg-green-700 transition"
-          >
-            Download Infographic →
-          </a>
+         
         </div>
 
         {/* Reviewers' Expectations */}

@@ -2,20 +2,19 @@ import React from "react";
 
 const CompanyDetails = () => {
   return (
-    <div className="lg:w-max-7xl flex flex-col-reverse lg:flex-row items-center justify-center px-6 md:px-12 py-16 bg-gray-50 min-h-[500px] lg:min-h-[600px] ">
+    <div className="lg:w-max-7xl flex flex-col-reverse lg:flex-row items-center justify-center px-4 sm:px-6 md:px-12 lg:px-24 py-10 sm:py-12 md:py-16 bg-gray-50 min-h-[500px] lg:min-h-[600px] ">
       {/* Right: Text Section (Appears first on mobile) */}
       <div className="w-full lg:w-4/12 flex justify-center">
         <img
           src="/images/vecteezy_multiethnic-startup-business-team-in-night-office_12105509 (1).jpg"
           alt="Illustration"
-          className="w-[300px] sm:w-[400px] md:w-[500px] lg:w-[600px] h-auto drop-shadow-lg rounded-lg"
+          className="w-[300px] sm:w-[400px] md:w-[500px] lg:w-[600px] h-auto drop-shadow-lg rounded-lg mt-10 lg:mt-0"
         />
       </div>
 
-
       {/* Left: Image Section */}
       <div className="w-full lg:w-[40%] text-center lg:text-left px-6 md:px-10 lg:px-16">
-        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 border-l-4 border-blue-500 pl-4 leading-snug">
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 border-l-4 border-blue-500 pl-4 mb-4">
           <span className="text-blue-600">Articles Publication</span> is an
           academic writing assistance company.
         </h2>

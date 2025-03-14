@@ -1,108 +1,218 @@
 import React, { useState } from "react";
-import { Search, FileText, Filter } from "lucide-react";
-
-const journals = [
-  { id: 1, name: "International Journal of AI Research", category: "Artificial Intelligence", impactFactor: "5.2" },
-  { id: 2, name: "Journal of Data Science & Analytics", category: "Data Science", impactFactor: "4.8" },
-  { id: 3, name: "Advances in Medical Research", category: "Medicine", impactFactor: "6.1" },
-  { id: 4, name: "Journal of Environmental Studies", category: "Environmental Science", impactFactor: "4.5" },
-  { id: 5, name: "Global Economics Review", category: "Economics", impactFactor: "3.9" },
-];
+import { Search, Filter, BookOpen } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import journals from "../../Data/findjournalDetails";
 
 const FindJournal = () => {
+  const navigate = useNavigate();
   const [search, setSearch] = useState("");
-  const [sortOrder, setSortOrder] = useState("asc"); // Sorting order
+  const [sortOrder, setSortOrder] = useState("asc");
+  const [categoryFilter, setCategoryFilter] = useState("all");
+  const [currentPage, setCurrentPage] = useState(1);
+  const itemsPerPage = 6; // Changed from 4 to 6
 
-  // Filtering based on search
+  // Get unique categories
+  const categories = [
+    "all",
+    ...new Set(journals.map((journal) => journal.category)),
+  ];
+
+  // Filter and sort journals
   const filteredJournals = journals
-    .filter((journal) =>
-      journal.name.toLowerCase().includes(search.toLowerCase()) ||
-      journal.category.toLowerCase().includes(search.toLowerCase())
+    .filter(
+      (journal) =>
+        (categoryFilter === "all" || journal.category === categoryFilter) &&
+        (journal.name.toLowerCase().includes(search.toLowerCase()) ||
+          journal.category.toLowerCase().includes(search.toLowerCase()))
     )
-    .sort((a, b) => 
-      sortOrder === "asc" ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name)
+    .sort((a, b) =>
+      sortOrder === "asc"
+        ? a.name.localeCompare(b.name)
+        : b.name.localeCompare(a.name)
     );
 
+  // Pagination logic
+  const totalPages = Math.ceil(filteredJournals.length / itemsPerPage);
+  const indexOfLastItem = currentPage * itemsPerPage;
+  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+  const currentJournals = filteredJournals.slice(
+    indexOfFirstItem,
+    indexOfLastItem
+  );
+
+  // Page navigation handlers
+  const goToNextPage = () =>
+    setCurrentPage((prev) => Math.min(prev + 1, totalPages));
+  const goToPrevPage = () => setCurrentPage((prev) => Math.max(prev - 1, 1));
+  const goToPage = (page) => setCurrentPage(page);
+
   return (
-    <section className="py-16 bg-gray-100">
-      <div className="max-w-6xl mx-auto px-6">
-        {/* Section Heading */}
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-800">Find the Right Journal</h2>
-          <div className="w-20 h-1 bg-blue-600 mx-auto mt-4"></div>
-          <p className="text-lg text-gray-600 mt-4">
-            Discover journals suitable for your research paper and publication needs.
+    <div className="min-h-screen bg-gray-50 py-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl">
+            Academic Journals Directory
+          </h1>
+          <p className="mt-3 text-lg text-gray-600">
+            Find and compare academic journals for your research publication
           </p>
         </div>
-
-        {/* Search and Sort Controls */}
-        <div className="flex flex-col md:flex-row items-center justify-between mb-8 space-y-4 md:space-y-0">
+        {/* Search & Filter Controls */}
+        {/* Search & Filter Controls */}
+        <div className="flex flex-col md:flex-row gap-4 mb-8">
           {/* Search Bar */}
-          <div className="relative w-full md:w-2/3">
-            <Search className="absolute left-4 top-3 text-gray-500 h-5 w-5" />
+          <div className="flex-1 relative">
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 h-5 w-5" />
             <input
               type="text"
-              placeholder="Search by journal name or category..."
-              className="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
+              placeholder="Search journals..."
+              className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md 
+                 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 
+                 hover:border-blue-500 hover:ring-blue-500 transition-all"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
             />
           </div>
 
-          {/* Sorting Dropdown */}
-          <div className="relative">
-            <Filter className="absolute left-3 top-3 text-gray-500 h-5 w-5" />
+          {/* Sort Dropdown */}
+          <div className="md:w-48">
+            <div className="relative">
+              <Filter className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 h-5 w-5" />
+              <select
+                className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md 
+                   focus:ring-2 focus:ring-blue-500 focus:border-blue-500 
+                   hover:border-blue-500 hover:ring-blue-500 hover:bg-blue-50 transition-all"
+                value={sortOrder}
+                onChange={(e) => setSortOrder(e.target.value)}
+              >
+                <option value="asc">Sort A-Z</option>
+                <option value="desc">Sort Z-A</option>
+              </select>
+            </div>
+          </div>
+
+          {/* Category Filter Dropdown */}
+          <div className="md:w-48">
             <select
-              className="pl-10 pr-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:border-blue-500 focus:ring-blue-500"
-              value={sortOrder}
-              onChange={(e) => setSortOrder(e.target.value)}
+              className="w-full px-4 py-2 border border-gray-200 rounded-md 
+                 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 
+                 hover:border-blue-500 hover:ring-blue-500 hover:bg-blue-50 transition-all"
+              value={categoryFilter}
+              onChange={(e) => setCategoryFilter(e.target.value)}
             >
-              <option value="asc">Sort A-Z</option>
-              <option value="desc">Sort Z-A</option>
+              {categories.map((category) => (
+                <option key={category} value={category}>
+                  {category === "all" ? "All Categories" : category}
+                </option>
+              ))}
             </select>
           </div>
         </div>
 
-        {/* Journals List */}
+        {/* Journal List */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredJournals.length > 0 ? (
-            filteredJournals.map((journal) => (
+          {currentJournals.length > 0 ? (
+            currentJournals.map((journal) => (
               <div
                 key={journal.id}
-                className="bg-white p-6 shadow-lg rounded-lg relative overflow-hidden border border-gray-300"
-                style={{ 
-                  boxShadow: "10px 10px 0px rgba(0, 0, 0, 0.1)", // Book-style shadow
-                  borderRadius: "10px 0 0 10px" // Soft edges
-                }}
+                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col h-full"
               >
-                {/* Book Spine Effect */}
-                <div className="absolute left-0 top-0 h-full w-6 bg-blue-600"></div>
-
-                {/* Content */}
-                <div className="pl-8">
-                  <div className="flex items-center mb-3">
-                    <FileText className="h-6 w-6 text-blue-600 mr-2" />
-                    <h3 className="text-xl font-semibold text-gray-800">{journal.name}</h3>
+                <div
+                  key={journal.id}
+                  className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col h-full"
+                >
+                  {/* Image Section */}
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={journal.coverImage}
+                      alt={journal.name}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                  <p className="text-gray-600">
-                    <strong>Category:</strong> {journal.category}
-                  </p>
-                  <p className="text-gray-600">
-                    <strong>Impact Factor:</strong> {journal.impactFactor}
-                  </p>
-                  <button className="mt-4 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition">
-                    View Journal
-                  </button>
+
+                  {/* Content Section */}
+                  <div className="p-6 flex flex-col flex-grow">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2 text-center">
+                      {journal.name}
+                    </h3>
+
+                    {/* Spacer to push button to bottom */}
+                    <div className="flex-grow"></div>
+
+                    <button
+                      onClick={() => navigate(`/journal/${journal.id}`)}
+                      className="mt-auto w-full px-4 py-2 text-blue-600 border-2 border-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors duration-300 flex items-center justify-center"
+                    >
+                      <BookOpen className="h-5 w-5 mr-2" />
+                      View Journal
+                    </button>
+                  </div>
                 </div>
               </div>
             ))
           ) : (
-            <p className="text-center text-gray-600">No journals found.</p>
+            <div className="col-span-full text-center py-12">
+              <p className="text-gray-500">
+                No journals found matching your search criteria.
+              </p>
+            </div>
           )}
         </div>
+
+        {/* Pagination */}
+        {totalPages > 1 && (
+          <div className="flex justify-center mt-10 space-x-2">
+            <button
+              onClick={goToPrevPage}
+              disabled={currentPage === 1}
+              className="px-4 py-2 border border-blue-500 text-blue-500 rounded-md disabled:opacity-50"
+            >
+              Previous
+            </button>
+            {Array.from({ length: totalPages }, (_, i) => (
+              <button
+                key={i}
+                onClick={() => goToPage(i + 1)}
+                className={`px-4 py-2 border rounded-md ${
+                  currentPage === i + 1
+                    ? "bg-blue-500 text-white"
+                    : "border-blue-500 text-blue-500"
+                }`}
+              >
+                {i + 1}
+              </button>
+            ))}
+            <button
+              onClick={goToNextPage}
+              disabled={currentPage === totalPages}
+              className="px-4 py-2 border border-blue-500 text-blue-500 rounded-md disabled:opacity-50"
+            >
+              Next
+            </button>
+          </div>
+        )}
       </div>
-    </section>
+    </div>
   );
 };
 
 export default FindJournal;
+
+{
+  /* Next Page Preview */
+}
+{
+  /* {nextJournals.length > 0 && (
+          <div className="mt-12 bg-gray-100 p-6 rounded-lg">
+            <h3 className="text-2xl font-semibold text-gray-900 mb-4">Next Page Preview</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {nextJournals.map((journal) => (
+                <div key={journal.id} className="bg-white rounded-lg shadow-md p-4">
+                  <h4 className="text-lg font-medium text-gray-900">{journal.name}</h4>
+                  <p className="text-sm text-gray-600">Category: {journal.category}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )} */
+}

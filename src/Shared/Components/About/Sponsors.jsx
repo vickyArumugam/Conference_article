@@ -2,10 +2,10 @@ import React from "react";
 
 const Sponsors = () => {
   return (
-    <div className="bg-white py-6 flex flex-col items-center">
+    <div className="bg-white py-6 flex flex-col items-center my-10">
       {/* Section heading */}
-      <h2 className="text-3xl font-bold mb-4">Sponsors</h2>
-      <p className="text-lg text-gray-600 mb-6">
+      <h2 className="text-4xl font-bold mb-4">Sponsors</h2>
+      <p className="text-xl text-gray-600 mb-6">
         Our valued partners and supporters
       </p>
 

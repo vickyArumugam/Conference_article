@@ -1,19 +1,21 @@
 import { CheckCircleIcon } from "@heroicons/react/24/solid";
 
 export default function EarlyCiteSection() {
+  const features = ["Typeset", "Proofed", "Record", "Download"];
+
   return (
     <section className="bg-gray-100 py-16 px-6">
       <div className="max-w-5xl mx-auto  rounded-2xl p-8">
         {/* Title */}
-        <h2 className="text-4xl font-bold text-gray-900">
+        <h2 className="text-4xl font-bold text-gray-900 text-center">
           EarlyCite & Accepted Articles
         </h2>
-        <div className="w-12 h-1 bg-blue-600 ml-32  mt-4 mb-10"></div>
+        <div className="w-20 h-1 bg-blue-600 mx-auto mt-6 mb-10"></div>
 
         {/* Description */}
-        <p className="text-lg text-gray-700 leading-relaxed">
+        <p className="text-gray-700 mt-4 text-base sm:text-lg md:text-xl leading-relaxed text-justify">
           If your article is accepted, we ensure its early availability on{" "}
-          <a href="#" className="text-blue-600 font-medium hover:underline">
+          <a href="#" className="text-blue-600 font-medium hover:underline ">
             Emerald Insight
           </a>
           , allowing immediate citations and downloads.If you receive the good
@@ -24,30 +26,27 @@ export default function EarlyCiteSection() {
         </p>
 
         {/* Features Section */}
-        <div className="  p-6 ">
-          <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-            Your article will be:
-          </h3>
-          <ul className="space-y-3">
-            {[
-              "Typeset",
-              "Proofed",
-              "Published online as a Version of Record",
-              "Available for citing and downloading",
-            ].map((item, index) => (
-              <li
-                key={index}
-                className="flex items-center space-x-3 text-gray-800"
-              >
-                <CheckCircleIcon className="h-6 w-6 text-blue-500" />
-                <span className="text-lg">{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <div className="p-6">
+      <h3 className="text-3xl font-semibold text-gray-900 my-4 text-center">
+        Your article will be
+      </h3>
+      <ul className="flex flex-wrap justify-center items-center space-x-4">
+        {features.map((item, index) => (
+          <div key={index} className="flex items-center space-x-2">
+            <li className="flex items-center text-gray-800 text-lg gap-2">
+              <CheckCircleIcon className="h-6 w-6 text-blue-500 flex-shrink-0" />
+              <span className="leading-none">{item}</span>
+            </li>
+            {index !== features.length - 1 && (
+              <span className="text-gray-600 text-5xl font-bold mb-2">→</span>
+            )}
+          </div>
+        ))}
+      </ul>
+    </div>
 
         {/* Additional Info */}
-        <p className="mt-6 text-gray-700">
+        <p className="text-gray-700 mt-4 text-base sm:text-lg md:text-xl leading-relaxed text-justify">
           EarlyCite articles are published as standalone articles and then later
           collated into issues in advance of print publication. At this point,
           the articles move to the table of contents for the compiled issue and

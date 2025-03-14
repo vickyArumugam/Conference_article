@@ -1,35 +1,37 @@
 import React from "react";
-import FindJournal from "./FindJournals";
+import { useNavigate } from "react-router-dom";
 
 const FindJournalHome = () => {
+  const navigate = useNavigate();
+
   return (
     <div
-      className="relative w-full mx-auto min-h-[600px] flex items-center justify-center bg-cover bg-center px-4 sm:px-6 lg:px-8"
+      className="relative w-full mx-auto min-h-[500px] sm:min-h-[600px] lg:min-h-[700px] flex items-center justify-center bg-fixed bg-cover bg-center px-6 sm:px-8 lg:px-12"
       style={{
         backgroundImage:
           "url('/images/vecteezy_businesspeople-manage-corporate-document-databases-through_10727504.jpg')",
-        backgroundAttachment: "fixed", // Keeps the background fixed while scrolling
-        backgroundSize: "cover",
-        backgroundPosition: "center",
       }}
     >
       {/* Overlay */}
       <div className="absolute inset-0 bg-black/70"></div>
 
       {/* Content */}
-      <div className="relative text-white text-center max-w-4xl">
-        <h1 className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-bold leading-snug mb-2">
+      <div className="relative text-white text-center max-w-4xl px-4 sm:px-6">
+        <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold lg:leading-snug sm:leading-normal md:leading-relaxed mb-3">
           Touch hearts, inspire change, and
           <span className="text-blue-600"> Evoke emotions.</span>
         </h1>
-        <p className="mt-4 text-base sm:text-lg md:text-xl leading-relaxed">
-          Search over 450 journals by keyword, title or ISSN, and use our new
-          filter, sort and compare options to find publications relevant to your
-          needs. You can also stay updated with our latest calls for papers and
-          special issues.
+        <p className="mt-5 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed">
+          Search over 450 journals by keyword, title, or ISSN, and use our new
+          filter, sort, and compare options to find publications relevant to
+          your needs. Stay updated with our latest calls for papers and special
+          issues.
         </p>
-        <button className="mt-8 px-6 md:px-8 py-3 md:py-4 bg-blue-600 text-white rounded-lg text-lg md:text-xl shadow-lg hover:bg-blue-700 transition duration-300">
-          Find a Journal <span className="ml-2">↗</span>
+        <button
+          onClick={() => navigate("/Journal")}
+          className="mt-10 px-4 sm:px-6 md:px-8 py-2 md:py-3 bg-blue-600 text-white rounded-md text-sm sm:text-base md:text-lg shadow-md hover:bg-blue-700 transition duration-300"
+        >
+          Find a Journal <span className="ml-1">↗</span>
         </button>
       </div>
     </div>

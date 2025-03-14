@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { X } from "lucide-react"; // For close icon
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,41 +38,83 @@ const Header = () => {
         {/* Mobile Menu Button */}
         <button
           className="md:hidden focus:outline-none"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          onClick={() => setIsMenuOpen(true)}
         >
           <span className="text-3xl">☰</span>
         </button>
 
-        {/* Navigation Links */}
-        <nav
-          className={`absolute md:relative top-20 md:top-0 left-0 w-full md:w-auto bg-white md:bg-transparent shadow-md md:shadow-none p-6 md:p-0 transition-all ease-in-out duration-300 ${
-            isMenuOpen ? "block" : "hidden md:flex"
-          }`}
+        {/* Mobile Menu - Right Sidebar with White Background */}
+        <div
+          className={`fixed top-0 right-0 h-full w-[250px] bg-white shadow-lg transform ${
+            isMenuOpen ? "translate-x-0 z-10" : "translate-x-full"
+          } transition-transform duration-300 ease-in-out md:hidden`}
         >
-          <ul className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-6 text-sm md:text-base">
+          {/* Close Button */}
+          <button
+            className="absolute top-4 right-4 text-gray-600"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <X className="h-6 w-6" />
+          </button>
+
+          {/* Navigation Links */}
+          <nav className="flex flex-col mt-3.5 space-y-4 px-6 text-base bg-white">
             {[
               { path: "/", label: "Home" },
               { path: "/about", label: "About" },
-              { path: "/publish", label: "Journal publish" },
+              { path: "/publish", label: "Journal Publish" },
               { path: "/review", label: "Review Process" },
               { path: "/Journal", label: "Find a Journal" },
               { path: "/register", label: "Register" },
               { path: "/contact", label: "Contact" },
             ].map(({ path, label }) => (
-              <li key={path}>
-                <Link
-                  to={path}
-                  className={`relative pb-2 transition-all ${
-                    location.pathname === path
-                      ? "text-blue-600 border-b-2 border-blue-600 font-semibold"
-                      : "text-black hover:text-blue-500 hover:border-b-2 hover:border-blue-500"
-                  }`}
-                >
-                  {label}
-                </Link>
-              </li>
+              <Link
+                key={path}
+                to={path}
+                className={`py-2 px-4 rounded transition-all ${
+                  location.pathname === path
+                    ? "text-blue-600 font-semibold"
+                    : "text-black hover:text-blue-500"
+                }`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {label}
+              </Link>
             ))}
-          </ul>
+          </nav>
+        </div>
+
+        {/* Overlay when menu is open */}
+        {isMenuOpen && (
+          <div
+            className="fixed inset-0 bg-black/50 md:hidden"
+            onClick={() => setIsMenuOpen(false)}
+          ></div>
+        )}
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex space-x-6 text-sm md:text-base md:bg-transparent">
+          {[
+            { path: "/", label: "Home" },
+            { path: "/about", label: "About" },
+            { path: "/publish", label: "Journal Publish" },
+            { path: "/review", label: "Review Process" },
+            { path: "/Journal", label: "Find a Journal" },
+            { path: "/register", label: "Register" },
+            { path: "/contact", label: "Contact" },
+          ].map(({ path, label }) => (
+            <Link
+              key={path}
+              to={path}
+              className={`relative pb-2 transition-all ${
+                location.pathname === path
+                  ? "text-blue-600 border-b-2 border-blue-600 font-semibold"
+                  : "text-black hover:text-blue-500 hover:border-b-2 hover:border-blue-500"
+              }`}
+            >
+              {label}
+            </Link>
+          ))}
         </nav>
       </div>
     </header>

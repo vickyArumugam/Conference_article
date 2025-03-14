@@ -1,35 +1,39 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const ButtonLeft = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className="w-full bg-gray-50 py-10">
-      <div className="max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center gap-20 ">
-        {/* Right Side - Content */}
-      
-        <div className="flex-1 text-center lg:text-left">
-          <h1 className="text-3xl sm:text-4xl lg:text-[32px] font-bold text-gray-700 leading-tight">
+    <section className="bg-white py-16 px-6 md:px-8 lg:px-24 flex justify-center">
+      <div className="w-[70%] flex flex-col-reverse lg:flex-row items-center gap-8">
+        {/* Left Side - Text Content */}
+        <div className="lg:w-5/6 text-center lg:text-left">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900">
             Register now to start earning!
-          </h1>
+          </h2>
           <p className="mt-4 text-lg text-gray-600 max-w-lg mx-auto lg:mx-0">
-            articlespublication is a freelance academic writing agency, which
-            could offer you the perfect job!
+            ArticlesPublication is a freelance academic writing agency that offers
+            you the opportunity to publish and earn from your research.
           </p>
-          <button className="mt-6 px-10 py-3 bg-blue-600 text-white text-xl rounded-3xl shadow-md hover:bg-blue-700 transition duration-300">
+          <button
+            onClick={() => navigate("/register")}
+            className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition"
+          >
             Start Registration
           </button>
         </div>
 
-        {/* Left Side - Image */}
-        <div className="flex-1">
+        {/* Right Side - Image */}
+        <div className="lg:w-1/2 flex justify-center">
           <img
-            src="\images\img2.png" // Replace with your actual image path
-            alt="Conference"
-            className="w-full max-w-lg mx-auto lg:mx-0 h-[40%] rounded-lg "
+            src="/images/img2.png" // Ensure correct path
+            alt="Article Publication"
+            className="w-full max-w-xs lg:max-w-sm h-auto object-cover"
           />
         </div>
-
       </div>
-    </div>
+    </section>
   );
 };
 

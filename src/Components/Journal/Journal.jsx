@@ -3,12 +3,14 @@ import { motion } from "framer-motion";
 import PublishSection from "./PublishSection";
 import PublishingTimeline from "./PublishingTimeline";
 import EarlyCiteSection from "./EarlyCiteSection";
+import EmeraldInsight from "./EmeraldInsight";
 
 const Journal = () => {
   return (
     <>
+
       <section
-        className="relative text-white py-24 px-6 lg:px-16 text-center bg-cover bg-center"
+        className="relative text-white py-24 px-6 lg:px-24 text-center bg-cover bg-center"
         style={{
           backgroundImage: "url('public/images/publishImg.jpg')", // Update with your image path
           backgroundSize: "cover",
@@ -32,30 +34,44 @@ const Journal = () => {
           >
             Journal Publication
           </motion.h1>
-          <motion.p
-            className="text-lg md:text-xl font-light opacity-90 mb-6"
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            Follow our guide to publishing your paper in an Emerald journal and
-            find resources to support you. Our journal publishing infographic
-            will help you understand each step, from submission to publication.
-          </motion.p>
-          <motion.a
-            href="#"
-            className="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold text-lg shadow-md hover:bg-gray-200 transition"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            Explore Guide
-          </motion.a>
+         
         </motion.div>
       </section>
+
+      <div className="lg:w-max-7xl flex flex-col-reverse lg:flex-row items-center justify-center px-6 md:px-12 py-16 bg-white min-h-[500px] lg:min-h-[600px] ">
+      {/* Right: Text Section (Appears first on mobile) */}
+      <div className="w-full lg:w-[40%] text-center lg:text-left px-6 md:px-10 lg:px-16">
+        <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 border-l-4 border-blue-500 pl-4 leading-snug">
+          <span className="text-blue-600">Articles Publication</span> Follow our guide to publishing your paper.
+        </h2>
+        <p className="text-gray-700 mt-4 text-base sm:text-lg md:text-xl leading-relaxed text-justify">
+          We provide our help to numerous clients looking for a professional
+          writing service. Articles Publication was established in 2006, during
+          the early stages of academic writing platforms. Over time, it has
+          evolved from a small venture into a reputable enterprise. Our
+          dedication to writers, commitment to excellence, and focus on building
+          lasting relationships make Articles Publication a top choice for
+          freelance writers worldwide.
+        </p>
+      </div>
+  
+
+      {/* Left: Image Section */}
+      <div className="w-full lg:w-4/12 flex justify-center">
+        <img
+          src="/images/vecteezy_asian-woman-with-braces-ordering-food_20463451.JPG"
+          alt="Illustration"
+          className="w-[300px] sm:w-[400px] md:w-[500px] lg:w-[600px] h-auto drop-shadow-lg rounded-lg"
+        />
+      </div>
+
+    
+    </div>
 
       <PublishSection />
       <PublishingTimeline />
       <EarlyCiteSection />
+      <EmeraldInsight/>
     </>
   );
 };

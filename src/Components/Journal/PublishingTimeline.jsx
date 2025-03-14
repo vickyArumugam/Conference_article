@@ -69,9 +69,10 @@ export default function PublishingTimeline() {
   return (
     <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
       <div className="text-center">
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1e1b4b] leading-tight pt-5 pb-6">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1e1b4b] leading-tight pt-5 pb-2">
           The Journal Publishing Process
         </h1>
+        <div className="w-20 h-1 bg-blue-600 mx-auto mt-4 mb-10"></div>
         <p className="text-[#1e1b4b] text-base sm:text-lg font-sans p-3 sm:leading-8 w-[80%] mx-auto">
           From submission to publication, track your research journey through our comprehensive process. Each step is carefully designed to ensure the highest quality of academic publishing.
         </p>
@@ -81,17 +82,7 @@ export default function PublishingTimeline() {
         {timelineSteps.map((row, rowIndex) => (
           <div key={rowIndex} className="relative">
 
-            {/* Time indicator */}
-            {rowIndex === 0 && (
-              <div className="hidden md:block absolute -top-8 right-0 text-sm font-medium text-[#1e1b4b]">
-                2-8 months
-              </div>
-            )}
-            {rowIndex === 1 && (
-              <div className="hidden md:block absolute -top-8 right-0 text-sm font-medium text-[#1e1b4b]">
-                32 Days
-              </div>
-            )}
+       
 
             {/* Steps */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8">

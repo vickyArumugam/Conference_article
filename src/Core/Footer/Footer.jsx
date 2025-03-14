@@ -3,16 +3,18 @@ import { FaFacebookF, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-400 text-base py-12">
-      <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 px-6">
+    <footer className="bg-gray-900 text-gray-400 text-sm md:text-base">
+      {/* Main Footer Content */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 px-6 md:px-12 py-12 text-center sm:text-left">
         {/* Policies Section */}
         <div>
           <p className="mb-3 font-semibold text-gray-300">Policies</p>
           <ul className="space-y-2">
-            <li><a href="#" className="hover:text-gray-200">Privacy Policy</a></li>
-            <li><a href="#" className="hover:text-gray-200">Cookie Policy</a></li>
-            <li><a href="#" className="hover:text-gray-200">Terms of Use</a></li>
-            <li><a href="#" className="hover:text-gray-200">Refunds Policy</a></li>
+            {["Privacy Policy", "Cookie Policy", "Terms of Use", "Refunds Policy"].map((item) => (
+              <li key={item}>
+                <a href="#" className="hover:text-gray-200 transition-colors duration-300">{item}</a>
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -20,10 +22,18 @@ const Footer = () => {
         <div>
           <p className="mb-3 font-semibold text-gray-300">Writing Jobs</p>
           <ul className="space-y-2">
-            <li><a href="#" className="hover:text-gray-200">Freelance writing jobs</a></li>
-            <li><a href="#" className="hover:text-gray-200">Writing jobs from home</a></li>
-            <li><a href="#" className="hover:text-gray-200">Online writing jobs</a></li>
-            <li><a href="#" className="text-indigo-600 hover:text-indigo-200">♥ Investing in others</a></li>
+            {[
+              "Freelance writing jobs",
+              "Writing jobs from home",
+              "Online writing jobs",
+              "♥ Investing in others",
+            ].map((item, index) => (
+              <li key={index}>
+                <a href="#" className={item.includes("♥") ? "text-indigo-600 hover:text-indigo-400 transition-colors duration-300" : "hover:text-gray-200 transition-colors duration-300"}>
+                  {item}
+                </a>
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -31,10 +41,11 @@ const Footer = () => {
         <div>
           <p className="mb-3 font-semibold text-gray-300">Job Opportunities</p>
           <ul className="space-y-2">
-            <li><a href="#" className="hover:text-gray-200">Get paid to write</a></li>
-            <li><a href="#" className="hover:text-gray-200">Work from home online</a></li>
-            <li><a href="#" className="hover:text-gray-200">Jobs for writers</a></li>
-            <li><a href="#" className="hover:text-gray-200">Sitemap</a></li>
+            {["Get paid to write", "Work from home online", "Jobs for writers", "Sitemap"].map((item) => (
+              <li key={item}>
+                <a href="#" className="hover:text-gray-200 transition-colors duration-300">{item}</a>
+              </li>
+            ))}
           </ul>
         </div>
 
@@ -42,30 +53,31 @@ const Footer = () => {
         <div>
           <p className="mb-3 font-semibold text-gray-300">Locations</p>
           <ul className="space-y-2">
-            <li><a href="#" className="hover:text-gray-200">Europe</a></li>
-            <li><a href="#" className="hover:text-gray-200">Pakistan</a></li>
-            <li><a href="#" className="hover:text-gray-200">Philippines</a></li>
-            <li><a href="#" className="hover:text-gray-200">India</a></li>
+            {["Europe", "Pakistan", "Philippines", "India"].map((item) => (
+              <li key={item}>
+                <a href="#" className="hover:text-gray-200 transition-colors duration-300">{item}</a>
+              </li>
+            ))}
           </ul>
         </div>
 
         {/* Social Media Section */}
-        <div className="text-center sm:text-left">
-          <p className="mb-3 font-semibold text-gray-300">Social Media</p>
+        <div>
+          <p className="mb-3 font-semibold text-gray-300">Follow Us</p>
           <div className="flex justify-center sm:justify-start space-x-4">
-            <a href="#" className="text-gray-500 hover:text-gray-300 text-xl">
+            <a href="https://www.facebook.com" className="text-gray-500 hover:text-gray-300 text-2xl transition-transform transform hover:scale-110" target="_blank" rel="noopener noreferrer">
               <FaFacebookF />
             </a>
-            <a href="#" className="text-gray-500 hover:text-gray-300 text-xl">
+            <a href="https://twitter.com" className="text-gray-500 hover:text-gray-300 text-2xl transition-transform transform hover:scale-110" target="_blank" rel="noopener noreferrer">
               <FaTwitter />
             </a>
-          </div> 
+          </div>
         </div>
       </div>
 
-      {/* Footer Bottom */}
-      <div className="flex flex-col sm:flex-row justify-center items-center mt-8 border-t border-gray-700 pt-4 px-6 text-center">
-        <p>© 2008 - 2025 All rights reserved.</p>
+      {/* Footer Bottom (Copyright Notice) */}
+      <div className="border-t border-gray-700 px-6 text-center py-4 text-sm md:text-base">
+        <p>© 2008 - {new Date().getFullYear()} All rights reserved.</p>
       </div>
     </footer>
   );

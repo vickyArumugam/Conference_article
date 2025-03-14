@@ -8,6 +8,7 @@ import TestimonialCarousel from "../Banner/Carousel";
 import AboutSec2 from "../../Components/About/Aboutsec2";
 import FindJournalHome from "../../Components/FindJournal/findJournalHome";
 import PricingPlans from "../../Shared/Components/About/PricingPlans";
+import ContactBanner from "../Banner/ContactBanner";
 
 const Home = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -37,6 +38,7 @@ const Home = () => {
       <div id="pricing-plans">
         <PricingPlans />
       </div>
+      {/* <ContactBanner/> */}
 
       <ButtonRight />
     </>
