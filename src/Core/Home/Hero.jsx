@@ -16,12 +16,16 @@ const Hero = () => {
           <p className="text-gray-600 text-base mt-4 max-w-lg mx-auto lg:mx-0">
             Driven to publish research that inspires action. Join us in making a positive impact — are you ready?
           </p>
-          <button
-            onClick={() => navigate("/register")}
-            className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition"
-          >
-            Register now
-          </button>
+
+          {/* Button - Left on large screens, centered on small screens */}
+          <div className="flex justify-center lg:justify-start">
+            <button
+              onClick={() => navigate("/register")}
+              className="px-6 py-3 mt-6 bg-blue-600 text-white rounded-lg text-lg shadow-lg hover:bg-blue-700 transition duration-300 flex items-center"
+            >
+              Register now <span className="ml-2">↗</span>
+            </button>
+          </div>
         </div>
 
         {/* Right Image Section */}

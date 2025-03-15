@@ -2,13 +2,13 @@ import React from "react";
 
 const EmeraldInsight = () => {
   return (
-    <section className="w-4/5 mx-auto flex flex-col md:flex-row items-center justify-center bg-white py-12 px-6 md:px-16">
+    <section className="w-4/5 mx-auto flex flex-col md:flex-row items-center justify-center bg-white py-14 px-0 md:px-16 lg:px-6 lg:py-24">
       {/* Left Content */}
       <div className="w-full md:w-1/2 flex justify-center">
         <img
           src="/images/vecteezy_man-using-laptop-computer-with-education-icon-concept_3656056.jpg" // Replace with your image path
           alt="Emerald Insight"
-          className="rounded-xl shadow-lg w-full md:max-w-lg"
+          className="rounded-xl shadow-lg w-full md:max-w-lg mb-8 lg:mb-0"
         />
       </div>
 

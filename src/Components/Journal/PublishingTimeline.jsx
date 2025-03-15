@@ -97,12 +97,12 @@ export default function PublishingTimeline() {
                     <div className="md:hidden absolute left-1/2 bottom-0 w-px h-8 bg-[#f0f4ff] transform translate-y-full" />
                   )}
 
-                  <div className="flex flex-col items-center text-center">
+                  <div className="flex flex-col items-center text-center ">
                     <div className={`w-16 h-16 bg-${step.color}-500/10 rounded-full flex items-center justify-center mb-6`}>
                       <div className={`text-${step.color}-500`}>
                         {step.icon}
                       </div>
-                    </div>
+                    </div>  
                     
                     <h3 className="text-2xl font-bold text-[#1e1b4b] mb-4">
                       {step.title}

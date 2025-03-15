@@ -2,7 +2,7 @@ import React from "react";
 
 const DoubleReview = () => {
   return (
-    <div className="relative w-full h-[400px] md:h-[500px] flex items-center justify-center bg-gray-100 overflow-hidden">
+    <div className="relative lg:w-full h-[400px] md:h-[500px] flex items-center justify-center bg-gray-100 overflow-hidden">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat filter blur-sm brightness-75"
@@ -12,7 +12,7 @@ const DoubleReview = () => {
       ></div>
       
       {/* Content Container */}
-      <div className="relative max-w-2xl bg-white shadow-lg rounded-lg p-6 md:p-8 text-gray-800">
+      <div className="relative w-[80%]  lg:max-w-2xl bg-white shadow-lg rounded-lg p-6 md:p-8 text-gray-800">
         <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">
           Double Anonymous Peer Review
         </h2>

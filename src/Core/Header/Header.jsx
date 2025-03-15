@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { X } from "lucide-react"; // For close icon
+import { X } from "lucide-react"; // Close icon
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation(); // Get current page location
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,13 +18,11 @@ const Header = () => {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md dark:border-slate-800 ${
-        isScrolled
-          ? "bg-gray-100 backdrop-blur-sm h-20 shadow-md fixed top-0 w-full z-50"
-          : "bg-gray-100 h-20"
+      className={`sticky top-0 z-50 w-full bg-white shadow-md ${
+        isScrolled ? "shadow-md" : ""
       }`}
     >
-      <div className="max-w-[90%] mx-auto flex justify-between items-center px-6 h-full lg:max-w-[80%]">
+      <div className="max-w-[90%] mx-auto flex justify-between items-center h-20 lg:max-w-[80%]">
         <div className="text-2xl font-bold">
           <Link to="/">
             <img
@@ -37,17 +35,17 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden focus:outline-none"
+          className="lg:hidden focus:outline-none"
           onClick={() => setIsMenuOpen(true)}
         >
           <span className="text-3xl">☰</span>
         </button>
 
-        {/* Mobile Menu - Right Sidebar with White Background */}
+        {/* Mobile Menu with White Background */}
         <div
           className={`fixed top-0 right-0 h-full w-[250px] bg-white shadow-lg transform ${
-            isMenuOpen ? "translate-x-0 z-10" : "translate-x-full"
-          } transition-transform duration-300 ease-in-out md:hidden`}
+            isMenuOpen ? "translate-x-0" : "translate-x-full"
+          } transition-transform duration-300 ease-in-out lg:hidden`}
         >
           {/* Close Button */}
           <button
@@ -58,7 +56,7 @@ const Header = () => {
           </button>
 
           {/* Navigation Links */}
-          <nav className="flex flex-col mt-3.5 space-y-4 px-6 text-base bg-white">
+          <nav className="flex flex-col mt-10 space-y-4 px-6 text-base bg-white">
             {[
               { path: "/", label: "Home" },
               { path: "/about", label: "About" },
@@ -84,16 +82,8 @@ const Header = () => {
           </nav>
         </div>
 
-        {/* Overlay when menu is open */}
-        {isMenuOpen && (
-          <div
-            className="fixed inset-0 bg-black/50 md:hidden"
-            onClick={() => setIsMenuOpen(false)}
-          ></div>
-        )}
-
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-6 text-sm md:text-base md:bg-transparent">
+        <nav className="hidden lg:flex space-x-6 text-sm md:text-base">
           {[
             { path: "/", label: "Home" },
             { path: "/about", label: "About" },

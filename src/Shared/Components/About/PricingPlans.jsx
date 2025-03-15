@@ -9,7 +9,7 @@ export default function PricingPlans() {
           We have extremely experienced social media experts who can help you grow your audience in a short time.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-12 mt-10 ">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-12 mt-10 mb-6 ">
           {/** GOOD Plan */}
           <PlanCard 
             title="Good" 

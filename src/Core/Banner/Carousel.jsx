@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -10,21 +10,21 @@ const testimonials = [
     name: "Engr. PSAH",
     image: "/images/vecteezy_young-indian-student-holding-diary-file-in-hand_5219735.jpg",
     rating: 5,
-    review: "Overall I am satisfied with the workload this season...",
+    review: "Overall I am satisfied with the workload this season.\nThe team was professional and highly skilled.",
     source: "TrustPilot",
   },
   {
     name: "Jane Doe",
     image: "/images/vecteezy_portrait-of-woman-university-student-holding-book-in-studio_2629904.jpg",
     rating: 4,
-    review: "Great experience, improved my skills significantly!",
+    review: "Great experience!\nImproved my skills significantly.\nWould recommend to others.",
     source: "Google Reviews",
   },
   {
     name: "John Smith",
     image: "/images/guy-asking-coworker-for-coffee-attractive-friendly-female-with-ginger-hair-and-beautiful-clean-skin-e1699027866487.png",
     rating: 5,
-    review: "Amazing support and professional guidance.",
+    review: "Amazing support and professional guidance.\nEverything was smooth and well-organized.",
     source: "Yelp",
   },
 ];
@@ -36,20 +36,22 @@ const TestimonialCarousel = () => {
         What Our Writers Say
       </h2>
       <div className="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
-      
+
       <div className="max-w-6xl mx-auto">
         <Swiper
-          modules={[Navigation, Pagination]}
+          modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={40}
           slidesPerView={1}
+          loop={true} // Enables infinite loop
           navigation
           pagination={{ clickable: true }}
+          autoplay={{ delay: 3000, disableOnInteraction: false }} // Auto-move every 3s
           className="overflow-hidden"
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
-              <div className="p-10 text-center relative h-[400px] ">
-                <div className="absolute top-6 left-1/2 transform -translate-x-1/2">
+              <div className="p-10 text-center relative h-[500px]">
+                <div className="absolute top-12 left-1/2 transform -translate-x-1/2">
                   <img
                     src={testimonial.image}
                     alt={testimonial.name}
@@ -64,7 +66,9 @@ const TestimonialCarousel = () => {
                       <FaStar key={i} className="text-yellow-500 text-xl" />
                     ))}
                   </div>
-                  <p className="text-lg text-gray-700 italic">{testimonial.review}</p>
+                  <p className="text-lg text-gray-700 italic whitespace-pre-line">
+                    {testimonial.review}
+                  </p>
                   <p className="text-base text-gray-500 my-3">
                     Published on{" "}
                     <span className="text-blue-600 font-medium">{testimonial.source}</span>

@@ -38,7 +38,7 @@ const Journal = () => {
         </motion.div>
       </section>
 
-      <div className="lg:w-max-7xl flex flex-col-reverse lg:flex-row items-center justify-center px-6 md:px-12 py-16 bg-white min-h-[500px] lg:min-h-[600px] ">
+      <div className="lg:w-max-7xl flex flex-col-reverse lg:flex-row items-center justify-center px-4 sm:px-6 md:px-12 py-16 bg-white min-h-[500px] lg:min-h-[600px] ">
       {/* Right: Text Section (Appears first on mobile) */}
       <div className="w-full lg:w-[40%] text-center lg:text-left px-6 md:px-10 lg:px-16">
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 border-l-4 border-blue-500 pl-4 leading-snug">
@@ -61,7 +61,7 @@ const Journal = () => {
         <img
           src="/images/vecteezy_asian-woman-with-braces-ordering-food_20463451.JPG"
           alt="Illustration"
-          className="w-[300px] sm:w-[400px] md:w-[500px] lg:w-[600px] h-auto drop-shadow-lg rounded-lg"
+          className="w-[350px] sm:w-[400px] md:w-[500px] lg:w-[600px] h-auto drop-shadow-lg rounded-lg mb-6 lg:mb-0"
         />
       </div>
 

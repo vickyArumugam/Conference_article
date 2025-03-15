@@ -1,11 +1,11 @@
 import { CheckCircleIcon } from "@heroicons/react/24/solid";
 
 export default function EarlyCiteSection() {
-  const features = ["Typeset", "Proofed", "Record", "Download"];
+  const features = ["Typeset", "Proofed", "Records", "Download"];
 
   return (
     <section className="bg-gray-100 py-16 px-6">
-      <div className="max-w-5xl mx-auto  rounded-2xl p-8">
+      <div className="max-w-5xl mx-auto  rounded-2xl p-2 lg:p-8">
         {/* Title */}
         <h2 className="text-4xl font-bold text-gray-900 text-center">
           EarlyCite & Accepted Articles
