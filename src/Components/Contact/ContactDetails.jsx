@@ -1,6 +1,6 @@
 import React from "react";
-import { FaMapMarkerAlt, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
 import ContactForm from "./Contact";
+import { motion } from "framer-motion";
 
 const ContactDetails = () => {
   return (
@@ -16,6 +16,7 @@ const ContactDetails = () => {
         <h1 className="text-4xl font-bold mb-4">Contact Page</h1>
       </div>
     </div>
+    
     <ContactForm/>
     </>
   );

@@ -64,7 +64,7 @@ const About = () => {
           <div className="flex md:justify-start justify-center mt-6">
             <button
               onClick={() => navigate("/about")}
-              className="px-6 py-3 bg-blue-600 text-white rounded-lg text-lg shadow-lg hover:bg-blue-700 transition duration-300 flex items-center"
+              className="px-6 py-3 bg-blue-600 text-white rounded-lg text-lg shadow-lg hover:bg-blue-700 transition duration-300 flex items-center cursor-pointer"
             >
               About Us <span className="ml-2">↗</span>
             </button>

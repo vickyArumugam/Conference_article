@@ -5,7 +5,7 @@ const ExperienceSection = () => {
   const navigate = useNavigate();
 
   return (
-    <div className=" w-[80%] lg:w-4/5 mx-auto flex flex-col md:flex-row items-center justify-center pb-16 lg:pt-16 px-0 lg:px-6 md:px-20 bg-white gap-10">
+    <div className=" w-[85%] lg:w-4/5 mx-auto flex flex-col md:flex-row items-center justify-center pb-16 lg:pt-16 px-0 lg:px-6 md:w-[100%] bg-white gap-10">
       {/* Left Side - Image & Experience */}
       <div className="md:w-1/2 md:pl-16 text-center md:text-left mt-8 md:mt-0">
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 border-l-4 border-blue-500 pl-4 leading-snug">
@@ -18,11 +18,11 @@ const ExperienceSection = () => {
           Lobortis nunc morbi eros fringilla per tellus nostra.
         </p>
         <button
-          onClick={() => navigate("/register")}
-          className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition"
-        >
-          Register now
-        </button>
+              onClick={() => navigate("/register")}
+              className="px-6 py-3 mt-6 bg-blue-600 text-white rounded-lg text-lg shadow-lg hover:bg-blue-700 transition duration-300 flex items-center cursor-pointer"
+            >
+              Register now <span className="ml-2">↗</span>
+            </button>
       </div>
       {/* Right Side - Content */}
       <div className="relative md:w-1/2">

@@ -64,5 +64,6 @@ export default {
       sm: "calc(var(--radius) - 4px)",
     },
 
+
   };
   tailwind.config.js

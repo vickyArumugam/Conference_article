@@ -84,7 +84,7 @@ const journals = [
     id: 10,
     name: "Cybersecurity & Privacy Review",
     category: "Cybersecurity",
-    coverImage: "/images/ vecteezy_cyber-security-concept-with-padlock-on-blue-background-3d_22653845.jpg",
+    coverImage: "/images/vecteezy_cyber-security-concept-with-padlock-on-blue-background-3d_22653845.jpg",
     acceptanceRate: "10.8%",
     timeToFirstDecision: "48 days",
     impactFactor: "6.0"

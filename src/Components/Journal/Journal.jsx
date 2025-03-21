@@ -4,20 +4,21 @@ import PublishSection from "./PublishSection";
 import PublishingTimeline from "./PublishingTimeline";
 import EarlyCiteSection from "./EarlyCiteSection";
 import EmeraldInsight from "./EmeraldInsight";
+import ContactBanner from "../../Core/Banner/ContactBanner";
 
 const Journal = () => {
   return (
     <>
 
-      <section
+      {/* <section
         className="relative text-white py-24 px-6 lg:px-24 text-center bg-cover bg-center"
         style={{
-          backgroundImage: "url('public/images/publishImg.jpg')", // Update with your image path
+          backgroundImage: "url('public/images/publishImg.jpg')", 
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        {/* Overlay for better readability */}
+  
         <div className="absolute inset-0  bg-opacity-90"></div>
 
         <motion.div
@@ -36,9 +37,9 @@ const Journal = () => {
           </motion.h1>
          
         </motion.div>
-      </section>
+      </section> */}
 
-      <div className="lg:w-max-7xl flex flex-col-reverse lg:flex-row items-center justify-center px-4 sm:px-6 md:px-12 py-16 bg-white min-h-[500px] lg:min-h-[600px] ">
+      <div className="lg:w-max-7xl flex flex-col-reverse lg:flex-row items-center justify-center px-4 sm:px-6 md:px-4 py-16 bg-white min-h-[500px] ">
       {/* Right: Text Section (Appears first on mobile) */}
       <div className="w-full lg:w-[40%] text-center lg:text-left px-6 md:px-10 lg:px-16">
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 border-l-4 border-blue-500 pl-4 leading-snug">
@@ -72,6 +73,7 @@ const Journal = () => {
       <PublishingTimeline />
       <EarlyCiteSection />
       <EmeraldInsight/>
+      <ContactBanner/>
     </>
   );
 };

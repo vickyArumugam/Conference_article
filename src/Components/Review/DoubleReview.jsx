@@ -13,7 +13,7 @@ const DoubleReview = () => {
       
       {/* Content Container */}
       <div className="relative w-[80%]  lg:max-w-2xl bg-white shadow-lg rounded-lg p-6 md:p-8 text-gray-800">
-        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-gray-900">
+        <h2 className="text-2xl md:text-3xl font-bold mb-4 text-vicky text-center ">
           Double Anonymous Peer Review
         </h2>
         <p className="text-sm md:text-base text-gray-600 leading-relaxed">

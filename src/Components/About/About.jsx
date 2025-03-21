@@ -7,16 +7,18 @@ import WhyUs from "../../Shared/Components/About/WhyUs";
 import ContactBanner from "../../Core/Banner/ContactBanner";
 import Banner from "../../Core/Banner/Banner";
 
+
+
 const About = () => {
   return (
     <>
+    
       <CompanyDetails />
       <WritersResponsibilities />
       <Banner />
-
       <WhyUs />
-      <ButtonLeft />
-      <ContactBanner/>
+      <ButtonLeft/>
+      <ContactBanner />
       <Sponsors />
     </>
   );

@@ -1,10 +1,31 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Banner = () => {
-  const handleScrollToPricing = () => {
-    const pricingSection = document.getElementById("pricing-plans");
-    if (pricingSection) {
-      pricingSection.scrollIntoView({ behavior: "smooth" });
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.state?.scrollToPricing) {
+      setTimeout(() => {
+        const pricingSection = document.getElementById("pricing-plans");
+        if (pricingSection) {
+          pricingSection.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 100); // Ensures DOM is ready
+    }
+  }, [location]);
+
+  const handleViewPricing = () => {
+    if (location.pathname === "/") {
+      setTimeout(() => {
+        const pricingSection = document.getElementById("pricing-plans");
+        if (pricingSection) {
+          pricingSection.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 1000);
+    } else {
+      navigate("/", { state: { scrollToPricing: true } });
     }
   };
 
@@ -17,10 +38,10 @@ const Banner = () => {
         <span className="font-bold text-xl sm:text-2xl">$26</span>/page completed by an{" "}
         <span className="text-xl sm:text-2xl">ENL</span> writer.
       </p>
-      
+
       <button
-        onClick={handleScrollToPricing}
-        className="mt-4 md:mt-0 md:ml-6 border-2 border-black px-4 py-2 rounded-full flex items-center hover:bg-black hover:text-white transition duration-300 text-xl"
+        onClick={handleViewPricing}
+        className="mt-4 md:mt-0 md:ml-6 border-2 border-black px-4 py-2 rounded-full flex items-center hover:bg-black hover:text-white transition duration-300 text-xl cursor-pointer md:w-[40%] sm:w-[50%] lg:w-auto"
       >
         View Pricing →
       </button>

@@ -9,20 +9,11 @@ import AboutSec2 from "../../Components/About/Aboutsec2";
 import FindJournalHome from "../../Components/FindJournal/findJournalHome";
 import PricingPlans from "../../Shared/Components/About/PricingPlans";
 import ContactBanner from "../Banner/ContactBanner";
+import { useLocation } from "react-router-dom";
 
 const Home = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <>
@@ -33,13 +24,10 @@ const Home = () => {
       <FindJournalHome />
       <AboutSec2 />
       <TestimonialCarousel />
-      
-      {/* Add ID here */}
       <div id="pricing-plans">
         <PricingPlans />
       </div>
-      {/* <ContactBanner/> */}
-
+      <ContactBanner />
       <ButtonRight />
     </>
   );

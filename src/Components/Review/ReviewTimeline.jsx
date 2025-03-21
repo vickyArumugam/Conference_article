@@ -2,13 +2,47 @@ import React from "react";
 import { ArrowRight } from "lucide-react";
 
 const steps = [
-  { title: "Submission", description: "The editor rejects the submission if it doesn't meet the journal's editorial objectives", status: "active" },
-  { title: "Review Process", description: "The editor selects up to three reviewers and asks them to evaluate the manuscript against a set of criteria", status: "active" },
-  { title: "Recommendations", description: "The editor receives the reviewers' recommendations", status: "pending" },
-  { title: "Final Decision", description: "The editor makes the final decision, taking into account the reviewers' recommendations", status: "pending" },
-  { title: "Accept", description: "The editor notifies the author that their paper has been accepted", status: "success" },
-  { title: "Reject", description: "The editor notifies the author that their paper has been rejected and shares a copy of the reviewers' comments", status: "danger" },
-  { title: "Revise", description: "The editor notifies the author that their paper requires revisions and shares a copy of the reviewers' comments", status: "warning" },
+  {
+    title: "Submission",
+    description:
+      "The editor rejects the submission if it doesn't meet the journal's editorial objectives",
+    status: "active",
+  },
+  {
+    title: "Review Process",
+    description:
+      "The editor selects up to three reviewers and asks them to evaluate the manuscript against a set of criteria",
+    status: "active",
+  },
+  {
+    title: "Recommen dations",
+    description: "The editor receives the reviewers' recommendations",
+    status: "pending",
+  },
+  {
+    title: "Final Decision",
+    description:
+      "The editor makes the final decision, taking into account the reviewers' recommendations",
+    status: "pending",
+  },
+  {
+    title: "Accept",
+    description:
+      "The editor notifies the author that their paper has been accepted",
+    status: "success",
+  },
+  {
+    title: "Reject",
+    description:
+      "The editor notifies the author that their paper has been rejected and shares a copy of the reviewers' comments",
+    status: "danger",
+  },
+  {
+    title: "Revise",
+    description:
+      "The editor notifies the author that their paper requires revisions and shares a copy of the reviewers' comments",
+    status: "warning",
+  },
 ];
 
 const statusColors = {
@@ -31,24 +65,48 @@ const Timeline = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-16 px-4 sm:px-6 lg:px-24">
       <div className="max-w-3xl mx-auto">
-        <h1 className="text-3xl font-bold text-gray-900 text-center mb-12">Publication Review Process</h1>
-        
+        <h1 className="text-3xl font-bold text-gray-900 text-center mb-12">
+          Publication Review Process
+        </h1>
+
         <div className="relative">
           <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-200"></div>
           <div className="space-y-12">
             {steps.map((step, index) => (
-              <div key={index} className={`relative flex items-center ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
+              <div
+                key={index}
+                className={`relative flex items-center ${
+                  index % 2 === 0 ? "flex-row" : "flex-row-reverse"
+                }`}
+              >
                 {index % 2 === 0 && index < steps.length - 1 && (
                   <div className="absolute top-full left-1/2 h-12 w-8 -translate-x-1/2">
-                    <ArrowRight className="absolute top-2 left-1/2 -translate-x-1/2 rotate-90 text-gray-400" size={24} />
+                    <ArrowRight
+                      className="absolute top-2 left-1/2 -translate-x-1/2 rotate-90 text-gray-400"
+                      size={24}
+                    />
                   </div>
                 )}
                 <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center justify-center">
-                  <div className={`w-8 h-8 rounded-full border-2 ${statusColors[step.status]} z-10`}></div>
+                  <div
+                    className={`w-8 h-8 rounded-full border-2 ${
+                      statusColors[step.status]
+                    } z-10`}
+                  ></div>
                 </div>
-                <div className={`w-5/12 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
-                  <div className={`p-4 rounded-lg shadow-sm border ${statusBackground[step.status]} transition-all duration-300 hover:shadow-md`}>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">{step.title}</h3>
+                <div
+                  className={`w-5/12 ${
+                    index % 2 === 0 ? "sm:pr-8 pr-0" : "sm:pl-8 pl-0"
+                  }`}
+                >
+                  <div
+                    className={`p-4 rounded-lg shadow-sm border ${
+                      statusBackground[step.status]
+                    } transition-all duration-300 hover:shadow-md`}
+                  >
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      {step.title}
+                    </h3>
                     <p className="text-sm text-gray-600">{step.description}</p>
                   </div>
                 </div>

@@ -47,7 +47,7 @@ const AboutSection = () => {
         <div className="flex justify-center lg:justify-start">
           <button 
             onClick={() => navigate("/review")} 
-            className="mt-6 px-4 sm:px-5 py-3 sm:py-3 bg-blue-600 text-white rounded-md text-sm sm:text-lg shadow-lg hover:bg-blue-700 transition duration-300"
+            className="mt-6 px-4 sm:px-5 py-3 sm:py-3 bg-blue-600 text-white rounded-md text-sm sm:text-lg shadow-lg hover:bg-blue-700 transition duration-300 cursor-pointer"
           >
             Review Process <span className="ml-2">↗</span>
           </button>

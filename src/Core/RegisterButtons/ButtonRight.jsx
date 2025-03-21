@@ -5,12 +5,12 @@ const ButtonRight = () => {
   const navigate = useNavigate();
 
   return (
-    <section className="bg-gray-50 py-16 px-6 md:px-8 lg:px-24">
+    <section className="bg-white py-16 px-6 md:px-8 lg:px-24">
       <div className="flex flex-col-reverse lg:flex-row items-center">
         {/* Left Side - Image */}
         <div className="lg:w-1/2 flex justify-center">
           <img
-            src="/images/img3.png" // Use forward slashes for correct path
+            src="/images/3892670.jpg" // Use forward slashes for correct path
             alt="Conference"
             className="w-full max-w-xs lg:max-w-sm h-auto object-cover mt-6 lg:mt-0"
           />
@@ -25,12 +25,16 @@ const ButtonRight = () => {
             ArticlesPublication is a freelance academic writing agency, which
             could offer you the perfect job!
           </p>
-          <button 
-            onClick={() => navigate("/register")} 
-            className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition"
-          >
-            Start Registration
-          </button>
+          <div className="flex justify-center lg:justify-start">
+          <button
+              onClick={() => navigate("/register")}
+              className="px-6 py-3 mt-6 bg-blue-600 text-white rounded-lg text-lg shadow-lg hover:bg-blue-700 transition duration-300 flex items-center cursor-pointer"
+            >
+              Register now <span className="ml-2">↗</span>
+            </button>
+
+          </div>
+         
         </div>
       </div>
     </section>

@@ -21,7 +21,7 @@ const Hero = () => {
           <div className="flex justify-center lg:justify-start">
             <button
               onClick={() => navigate("/register")}
-              className="px-6 py-3 mt-6 bg-blue-600 text-white rounded-lg text-lg shadow-lg hover:bg-blue-700 transition duration-300 flex items-center"
+              className="px-6 py-3 mt-6 bg-blue-600 text-white rounded-lg text-lg shadow-lg hover:bg-blue-700 transition duration-300 flex items-center cursor-pointer"
             >
               Register now <span className="ml-2">↗</span>
             </button>
@@ -37,7 +37,7 @@ const Hero = () => {
           }}
         >
           <img
-            src="/images/vecteezy_a-cheerful-asian-woman-student-stands-confidently-holding-a_55794185.png"
+            src="/images/woman-student.webp"
             alt="Person with laptop"
             className="w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg transition-transform duration-300 hover:scale-105"
             loading="lazy"

@@ -22,7 +22,7 @@ const Header = () => {
         isScrolled ? "shadow-md" : ""
       }`}
     >
-      <div className="max-w-[90%] mx-auto flex justify-between items-center h-20 lg:max-w-[80%]">
+      <div className="max-w-[90%] mx-auto flex justify-between items-center h-20 lg:max-w-[80%] ">
         <div className="text-2xl font-bold">
           <Link to="/">
             <img
@@ -96,7 +96,7 @@ const Header = () => {
             <Link
               key={path}
               to={path}
-              className={`relative pb-2 transition-all ${
+              className={`relative pb-1 transition-all ${
                 location.pathname === path
                   ? "text-blue-600 border-b-2 border-blue-600 font-semibold"
                   : "text-black hover:text-blue-500 hover:border-b-2 hover:border-blue-500"

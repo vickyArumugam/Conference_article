@@ -34,7 +34,7 @@ export default function   PublishSection() {
         </h2>
         <div className="w-20 h-1 bg-blue-600 mx-auto my-6"></div>
         {/* Cards Section */}
-        <div className="grid md:grid-cols-2 gap-x-22 gap-y-10 max-w-6xl mx-auto mt-10 lg:gap-y-22">
+        <div className="grid md:grid-cols-2 gap-x-22 gap-y-10 max-w-6xl mx-auto mt-10 md:gap-x-12 lg:gap-y-10">
           {cards.map((card, index) => (
             <div
               key={index}

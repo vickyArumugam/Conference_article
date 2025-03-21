@@ -13,7 +13,7 @@ const ContactBanner = () => {
       
       <a
         href="#"
-        className="mt-4 md:mt-0 md:ml-6 border border-gray-500 px-6 py-3 rounded-full text-gray-700 hover:bg-gray-700 hover:text-white transition duration-300 text-sm sm:text-base"
+        className="mt-4 md:mt-0 md:ml-6 border border-gray-500 px-6 py-3 rounded-full text-gray-700 hover:bg-gray-700 hover:text-white transition duration-300 text-sm sm:text-base md:w-[30%] sm:w-[50%] lg:w-auto"
         onClick={() => navigate("/contact")}
       >
         Get in Touch

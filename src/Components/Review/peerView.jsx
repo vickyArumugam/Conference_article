@@ -1,9 +1,5 @@
-
 import React from "react";
-import { Star, FileText, User } from "lucide-react";
 import PeerReviewHero from "./ReviewHero";
-import Banner from "../../Core/Banner/Banner";
-import BusinessInfographic from "./BusinessInfographic";
 import DoubleReview from "./DoubleReview";
 import Timeline from "./ReviewTimeline";
 import TipsSection from "./TipsSection";
@@ -40,6 +36,7 @@ const reviews = [
 const ReviewSection = () => {
   return (
     <>
+    
     <ExperienceSection/>
     <PeerReviewHero/>
     <DoubleReview/>

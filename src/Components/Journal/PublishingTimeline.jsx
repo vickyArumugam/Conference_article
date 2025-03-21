@@ -67,7 +67,7 @@ export default function PublishingTimeline() {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
+    <div className="container mx-auto px-6 py-12 sm:px-6 lg:px-8">
       <div className="text-center">
         <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1e1b4b] leading-tight pt-5 pb-2">
           The Journal Publishing Process
@@ -85,7 +85,7 @@ export default function PublishingTimeline() {
        
 
             {/* Steps */}
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
               {row.map((step, index) => (
                 <div
                   key={index}

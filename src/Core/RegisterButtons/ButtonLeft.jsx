@@ -17,17 +17,17 @@ const ButtonLeft = () => {
             you the opportunity to publish and earn from your research.
           </p>
           <button
-            onClick={() => navigate("/register")}
-            className="mt-6 bg-blue-600 text-white px-6 py-3 rounded-lg shadow-md hover:bg-blue-700 transition"
-          >
-            Start Registration
-          </button>
+              onClick={() => navigate("/register")}
+              className="px-6 py-3 mt-10  bg-blue-600 text-white rounded-lg text-lg shadow-lg hover:bg-blue-700 transition duration-300 flex items-center cursor-pointer ml-10 md:ml-44 lg:ml-0  "
+            >
+              Register now <span className="ml-2">↗</span>
+            </button>
         </div>
 
         {/* Right Side - Image */}
         <div className="lg:w-1/2 flex justify-center">
           <img
-            src="/images/img2.png" // Ensure correct path
+            src="/images/3892670.jpg" // Ensure correct path
             alt="Article Publication"
             className="w-full max-w-xs lg:max-w-sm h-auto object-cover"
           />
