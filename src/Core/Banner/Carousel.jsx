@@ -15,14 +15,14 @@ const testimonials = [
   },
   {
     name: "Engr. PSAH",
-    image: "/images/vecteezy_young-indian-student-holding-diary-file-in-hand_5219735.jpg",
+    image: "/images/vecteezy_portrait-of-man-university-student-holding-book-in-studio_2629916.jpg",
     rating: 5,
     review: "Overall I am satisfied with the workload this season.\nThe team was professional and highly skilled Overall I am satisfied with the workload this season.\nThe team was professional and highly skilled.",
     source: "TrustPilot",
   },
   {
     name: "Engr. PSAH",
-    image: "/images/vecteezy_young-indian-student-holding-diary-file-in-hand_5219735.jpg",
+    image: "/images/vecteezy_portrait-of-woman-university-student-holding-book-in-studio_2629904.jpg",
     rating: 5,
     review: "Overall I am satisfied with the workload this season.\nThe team was professional and highly skilled Overall I am satisfied with the workload this season.\nThe team was professional and highly skilled.",
     source: "TrustPilot",

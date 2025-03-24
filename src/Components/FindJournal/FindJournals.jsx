@@ -12,7 +12,6 @@ const FindJournal = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
 
-  // Retrieve the current page from the query parameter
   useEffect(() => {
     const queryParams = new URLSearchParams(location.search);
     const page = queryParams.get("page");
@@ -21,18 +20,12 @@ const FindJournal = () => {
     }
   }, [location.search]);
 
-  // Scroll to top on component mount
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Get unique categories
-  const categories = [
-    "all",
-    ...new Set(journals.map((journal) => journal.category)),
-  ];
+  const categories = ["all", ...new Set(journals.map((journal) => journal.category))];
 
-  // Filter and sort journals
   const filteredJournals = journals
     .filter(
       (journal) =>
@@ -41,29 +34,19 @@ const FindJournal = () => {
           journal.category.toLowerCase().includes(search.toLowerCase()))
     )
     .sort((a, b) =>
-      sortOrder === "asc"
-        ? a.name.localeCompare(b.name)
-        : b.name.localeCompare(a.name)
+      sortOrder === "asc" ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name)
     );
 
-  // Pagination logic
   const totalPages = Math.ceil(filteredJournals.length / itemsPerPage);
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentJournals = filteredJournals.slice(
-    indexOfFirstItem,
-    indexOfLastItem
-  );
+  const currentJournals = filteredJournals.slice(indexOfFirstItem, indexOfLastItem);
 
-  // Page navigation handlers
-  const goToNextPage = () =>
-    setCurrentPage((prev) => Math.min(prev + 1, totalPages));
+  const goToNextPage = () => setCurrentPage((prev) => Math.min(prev + 1, totalPages));
   const goToPrevPage = () => setCurrentPage((prev) => Math.max(prev - 1, 1));
   const goToPage = (page) => setCurrentPage(page);
 
-  // Handle journal card click
   const handleJournalClick = (journalId) => {
-    // Navigate to journal details with the current page as a query parameter
     navigate(`/journal/${journalId}?page=${currentPage}`);
   };
 
@@ -71,62 +54,8 @@ const FindJournal = () => {
     <div className="min-h-screen bg-gray-50 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl">
-            Academic Journals Directory
-          </h1>
-          <p className="mt-3 text-lg text-gray-600">
-            Find and compare academic journals for your research publication
-          </p>
-        </div>
-        {/* Search & Filter Controls */}
-        <div className="flex flex-col md:flex-row gap-4 mb-8">
-          {/* Search Bar */}
-          <div className="flex-1 relative">
-            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 h-5 w-5" />
-            <input
-              type="text"
-              placeholder="Search journals..."
-              className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md 
-                 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 
-                 hover:border-blue-500 hover:ring-blue-500 transition-all"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-            />
-          </div>
-
-          {/* Sort Dropdown */}
-          <div className="md:w-48">
-            <div className="relative">
-              <Filter className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 h-5 w-5" />
-              <select
-                className="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-md 
-                   focus:ring-2 focus:ring-blue-500 focus:border-blue-500 
-                   hover:border-blue-500 hover:ring-blue-500 hover:bg-blue-50 transition-all"
-                value={sortOrder}
-                onChange={(e) => setSortOrder(e.target.value)}
-              >
-                <option value="asc">Sort A-Z</option>
-                <option value="desc">Sort Z-A</option>
-              </select>
-            </div>
-          </div>
-
-          {/* Category Filter Dropdown */}
-          <div className="md:w-48">
-            <select
-              className="w-full px-4 py-2 border border-gray-200 rounded-md 
-                 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 
-                 hover:border-blue-500 hover:ring-blue-500 hover:bg-blue-50 transition-all"
-              value={categoryFilter}
-              onChange={(e) => setCategoryFilter(e.target.value)}
-            >
-              {categories.map((category) => (
-                <option key={category} value={category}>
-                  {category === "all" ? "All Categories" : category}
-                </option>
-              ))}
-            </select>
-          </div>
+          <h1 className="text-3xl font-bold text-gray-900 sm:text-4xl">Academic Journals Directory</h1>
+          <p className="mt-3 text-lg text-gray-600">Find and compare academic journals for your research publication</p>
         </div>
 
         {/* Journal List */}
@@ -135,20 +64,23 @@ const FindJournal = () => {
             currentJournals.map((journal) => (
               <div
                 key={journal.id}
-                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col h-full"
+                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col h-full cursor-pointer"
+                onClick={() => handleJournalClick(journal.id)}
               >
                 {/* Image Section */}
                 <div className="relative h-48 overflow-hidden">
                   <img
                     src={journal.coverImage}
                     alt={journal.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover cursor-pointer"
                   />
                 </div>
 
                 {/* Content Section */}
                 <div className="p-6 flex flex-col flex-grow">
-                  <h3 className="text-xl font-semibold text-gray-900 mb-2 text-center">
+                  <h3
+                    className="text-xl font-semibold text-gray-900 mb-2 text-center cursor-pointer hover:text-blue-600"
+                  >
                     {journal.name}
                   </h3>
 
@@ -156,7 +88,10 @@ const FindJournal = () => {
                   <div className="flex-grow"></div>
 
                   <button
-                    onClick={() => handleJournalClick(journal.id)}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleJournalClick(journal.id);
+                    }}
                     className="mt-auto w-full px-4 py-2 text-blue-600 border-2 border-blue-600 rounded-md hover:bg-blue-600 hover:text-white transition-colors duration-300 flex items-center justify-center cursor-pointer"
                   >
                     <BookOpen className="h-5 w-5 mr-2" />
@@ -167,45 +102,10 @@ const FindJournal = () => {
             ))
           ) : (
             <div className="col-span-full text-center py-12">
-              <p className="text-gray-500">
-                No journals found matching your search criteria.
-              </p>
+              <p className="text-gray-500">No journals found matching your search criteria.</p>
             </div>
           )}
         </div>
-
-        {/* Pagination */}
-        {totalPages > 1 && (
-          <div className="flex justify-center mt-10 space-x-2">
-            <button
-              onClick={goToPrevPage}
-              disabled={currentPage === 1}
-              className="px-4 py-2 border border-blue-500 text-blue-500 rounded-md disabled:opacity-50"
-            >
-              Previous
-            </button>
-            {Array.from({ length: totalPages }, (_, i) => (
-              <button
-                key={i}
-                onClick={() => goToPage(i + 1)}
-                className={`px-4 py-2 border rounded-md ${
-                  currentPage === i + 1
-                    ? "bg-blue-500 text-white"
-                    : "border-blue-500 text-blue-500"
-                }`}
-              >
-                {i + 1}
-              </button>
-            ))}
-            <button
-              onClick={goToNextPage}
-              disabled={currentPage === totalPages}
-              className="px-4 py-2 border border-blue-500 text-blue-500 rounded-md disabled:opacity-50"
-            >
-              Next
-            </button>
-          </div>
-        )}
       </div>
     </div>
   );

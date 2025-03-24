@@ -12,7 +12,7 @@ const Footer = () => {
           {/* Company Info Section */}
           <div className="space-y-4">
             <img
-              src="/images/logoArtboard 1 (1).png"
+              src="/images/Artboard 2.png"
               alt="Company Logo"
               className="w-24 mx-auto sm:mx-0"
             />
@@ -53,8 +53,8 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-gray-200 transition-colors duration-300">
-                  Services
+                <Link to="/register" className="hover:text-gray-200 transition-colors duration-300">
+                  Register
                 </Link>
               </li>
               <li>
