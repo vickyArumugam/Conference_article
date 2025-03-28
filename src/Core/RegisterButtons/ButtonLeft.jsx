@@ -27,7 +27,7 @@ const ButtonLeft = () => {
         {/* Right Side - Image */}
         <div className="lg:w-1/2 flex justify-center">
           <img
-            src="/images/3892670.jpg" // Ensure correct path
+            src="/images/3892670.webp" // Ensure correct path
             alt="Article Publication"
             className="w-full max-w-xs lg:max-w-sm h-auto object-cover"
           />

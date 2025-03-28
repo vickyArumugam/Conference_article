@@ -33,7 +33,7 @@ const Hero = () => {
           className="lg:w-1/2 flex justify-center bg-contain bg-no-repeat p-6"
           style={{
             backgroundImage:
-              "url('/images/vecteezy_organic-blob-shapes-hand-drawn-illustration_9668662.png')",
+              "url('/images/vecteezy_organic-blob-shapes-hand-drawn-illustration_9668662.webp')",
           }}
         >
           <img

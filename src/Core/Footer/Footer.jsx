@@ -12,7 +12,7 @@ const Footer = () => {
           {/* Company Info Section */}
           <div className="space-y-4">
             <img
-              src="/images/Artboard 2.png"
+              src="/images/Artboard.webp"
               alt="Company Logo"
               className="w-24 mx-auto sm:mx-0"
             />

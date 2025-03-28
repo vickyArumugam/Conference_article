@@ -7,9 +7,9 @@ import { useNavigate } from "react-router-dom";
 const About = () => {
   const navigate = useNavigate();
   const images = [
-    "/images/carsol1.jpg",
-    "/images/carsol2.jpg",
-    "/images/carsol3.jpg",
+    "/images/carsol1.webp",
+    "/images/carsol2.webp",
+    "/images/carsol3.webp",
   ];
 
   const sliderSettings = {

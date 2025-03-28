@@ -31,7 +31,7 @@ export default function WritersResponsibilities() {
         {/* Right: Image Section */}
         <div className="flex justify-center mt-8 md:mt-0 md:order-2 md:w-[80%]">
           <img
-            src="/images/vecteezy_inspiration-writer-writing-creative-recreation-for_18973930.jpg"
+            src="/images/vecteezy_inspiration-writer-writing-creative-recreation-for_18973930.webp"
             alt="Writer Responsibilities Illustration"
             className="w-full max-w-[350px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[650px] h-auto rounded-lg shadow-xl"
           />

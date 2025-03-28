@@ -11,6 +11,7 @@ import PricingPlans from "../Shared/Components/About/PricingPlans";
 import FindJournal from "../Components/FindJournal/FindJournals";
 import JournalDetails from "../Components/FindJournal/JournalDetails";
 import ScrollToTop from "../Core/ScrollToTop";
+import NotFound from "../Core/NotFound";
 
 function AppRouter() {
   return (
@@ -28,6 +29,7 @@ function AppRouter() {
           <Route path="/journal/:id" element={<JournalDetails />} />
           <Route path="/contact" element={<Contactus />} />
           <Route path="/register" element={<PaperSubmissionForm />} />
+          <Route path="*" element={<NotFound/>} />
         </Route>
       </Routes>
     </Router>

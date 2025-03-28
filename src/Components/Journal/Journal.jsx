@@ -60,7 +60,7 @@ const Journal = () => {
       {/* Left: Image Section */}
       <div className="w-full lg:w-4/12 flex justify-center">
         <img
-          src="/images/vecteezy_asian-woman-with-braces-ordering-food_20463451.JPG"
+          src="/images/vecteezy_asian-woman-with-braces-ordering-food_20463451.webp"
           alt="Illustration"
           className="w-[350px] sm:w-[400px] md:w-[500px] lg:w-[600px] h-auto drop-shadow-lg rounded-lg mb-6 lg:mb-0"
         />

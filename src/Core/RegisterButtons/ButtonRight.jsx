@@ -10,7 +10,7 @@ const ButtonRight = () => {
         {/* Left Side - Image */}
         <div className="lg:w-1/2 flex justify-center">
           <img
-            src="/images/3892670.jpg" // Use forward slashes for correct path
+            src="/images/3892670.webp" // Use forward slashes for correct path
             alt="Conference"
             className="w-full max-w-xs lg:max-w-sm h-auto object-cover mt-6 lg:mt-0"
           />

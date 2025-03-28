@@ -9,7 +9,7 @@ const FindJournalHome = () => {
       className="relative w-full mx-auto min-h-[500px] sm:min-h-[600px] lg:min-h-[700px] flex items-center justify-center bg-fixed bg-cover bg-center px-6 sm:px-8 lg:px-12"
       style={{
         backgroundImage:
-          "url('/images/vecteezy_businesspeople-manage-corporate-document-databases-through_10727504.jpg')",
+          "url('/images/vecteezy_businesspeople-manage-corporate-document-databases-through_10727504.webp')",
       }}
     >
       {/* Overlay */}

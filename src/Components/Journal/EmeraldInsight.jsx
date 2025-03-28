@@ -9,7 +9,7 @@ const EmeraldInsight = () => {
       {/* Left Content (Image) */}
       <div className="w-full md:w-1/2 flex justify-center mb-8 md:mb-0">
         <img
-          src="/images/vecteezy_man-using-laptop-computer-with-education-icon-concept_3656056.jpg" // Replace with your image path
+          src="/images/vecteezy_man-using-laptop-computer-with-education-icon-concept_3656056.webp" // Replace with your image path
           alt="Emerald Insight"
           className="rounded-xl shadow-lg w-full md:max-w-lg"
         />

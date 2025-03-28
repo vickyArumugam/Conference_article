@@ -15,12 +15,12 @@ const Sponsors = () => {
           {/* Duplicating logos for smooth infinite scrolling */}
           {[...Array(2)].map((_, index) => (
             <React.Fragment key={index}>
-             <img key={`logo1-${index}`} src="\images\Indexing-banner-JoE-2024-1024x439 (6).jpg" alt="Sponsor 1" className="h-16" />
-              <img key={`logo2-${index}`} src="\images\Indexing-banner-JoE-2024-1024x439 (5).jpg" alt="Sponsor 2" className="h-16" />
-              <img key={`logo3-${index}`} src="\images\Indexing-banner-JoE-2024-1024x439 (4).jpg" alt="Sponsor 3" className="h-16" />
-              <img key={`logo4-${index}`} src="\images\Indexing-banner-JoE-2024-1024x439 (3).jpg" alt="Sponsor 4" className="h-16" />
-              <img key={`logo5-${index}`} src="\images\Indexing-banner-JoE-2024-1024x439 (2).jpg" alt="Sponsor 5" className="h-16" />
-              <img key={`logo6-${index}`} src="\images\Indexing-banner-JoE-2024-1024x439 (5).jpg" alt="Sponsor 6" className="h-16" />
+             <img key={`logo1-${index}`} src="\images\Indexing-banner-JoE-2024-1024x439 (6).webp" alt="Sponsor 1" className="h-16" />
+              <img key={`logo2-${index}`} src="\images\Indexing-banner-JoE-2024-1024x439 (5).webp" alt="Sponsor 2" className="h-16" />
+              <img key={`logo3-${index}`} src="\images\Indexing-banner-JoE-2024-1024x439 (4).webp" alt="Sponsor 3" className="h-16" />
+              <img key={`logo4-${index}`} src="\images\Indexing-banner-JoE-2024-1024x439 (3).webp" alt="Sponsor 4" className="h-16" />
+              <img key={`logo5-${index}`} src="\images\Indexing-banner-JoE-2024-1024x439 (2).webp" alt="Sponsor 5" className="h-16" />
+              <img key={`logo6-${index}`} src="\images\Indexing-banner-JoE-2024-1024x439 (5).webp" alt="Sponsor 6" className="h-16" />
             </React.Fragment>
           ))}
         </div>

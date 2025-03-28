@@ -6,7 +6,7 @@ const CompanyDetails = () => {
       {/* Right: Text Section (Appears first on mobile) */}
       <div className="w-full lg:w-4/12 flex justify-center">
         <img
-          src="/images/vecteezy_multiethnic-startup-business-team-in-night-office_12105509 (1).jpg"
+          src="/images/vecteezy_multiethnic-startup-business-team-in-night-office_12105509 (1).webp"
           alt="Illustration"
           className="w-[300px] sm:w-[400px] md:w-[500px] lg:w-[600px] h-auto drop-shadow-lg rounded-lg mt-10 lg:mt-0"
         />

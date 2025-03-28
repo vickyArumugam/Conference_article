@@ -44,7 +44,7 @@ const WhyUs = () => {
         <div className="lg:w-1/2 w-full flex justify-center">
           <div className="bg-gray-300 p-4 rounded-lg">
             <img
-              src="/images/vecteezy_ai-generated-journalist-writing-breaking-news-article_35535356.jpg"
+              src="/images/vecteezy_ai-generated-journalist-writing-breaking-news-article_35535356.webp"
               alt="Journal Publication"
               className="w-full max-w-lg lg:max-w-2xl"
             />

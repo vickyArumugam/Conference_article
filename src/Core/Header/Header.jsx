@@ -26,7 +26,7 @@ const Header = () => {
         <div className="text-2xl font-bold">
           <Link to="/">
             <img
-              src="/images/logoArtboard 1 (1).png"
+              src="/images/logoArtboardd.webp"
               className="w-[100px] sm:w-[60px] md:w-[90px] lg:w-[150px] cursor-pointer"
               alt="Logo"
             />

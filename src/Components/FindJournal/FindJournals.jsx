@@ -106,6 +106,37 @@ const FindJournal = () => {
             </div>
           )}
         </div>
+        {totalPages > 1 && (
+           <div className="flex justify-center mt-10 space-x-2">
+             <button
+               onClick={goToPrevPage}
+               disabled={currentPage === 1}
+               className="px-4 py-2 border border-blue-500 text-blue-500 rounded-md disabled:opacity-50 "
+             >
+               Previous
+             </button>
+             {Array.from({ length: totalPages }, (_, i) => (
+               <button
+                 key={i}
+                 onClick={() => goToPage(i + 1)}
+                 className={`px-4 py-2 border rounded-md ${
+                   currentPage === i + 1
+                     ? "bg-blue-500 text-white"
+                     : "border-blue-500 text-blue-500"
+                 }`}
+               >
+                 {i + 1}
+               </button>
+             ))}
+             <button
+               onClick={goToNextPage}
+               disabled={currentPage === totalPages}
+               className="px-4 py-2 border border-blue-500 text-blue-500 rounded-md disabled:opacity-50"
+             >
+               Next
+             </button>
+           </div>
+         )}
       </div>
     </div>
   );
