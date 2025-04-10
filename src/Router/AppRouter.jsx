@@ -12,11 +12,13 @@ import FindJournal from "../Components/FindJournal/FindJournals";
 import JournalDetails from "../Components/FindJournal/JournalDetails";
 import ScrollToTop from "../Core/ScrollToTop";
 import NotFound from "../Core/NotFound";
+import MetaTags from "../Core/SEO/MetaTag";
 
 function AppRouter() {
   return (
     <Router>
       <ScrollToTop/>
+      <MetaTags/> 
       <Routes>
         {/* Main Layout Wrapper */}
         <Route element={<Main />}>

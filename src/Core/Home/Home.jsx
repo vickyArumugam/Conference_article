@@ -11,12 +11,14 @@ import PricingPlans from "../../Shared/Components/About/PricingPlans";
 import ContactBanner from "../Banner/ContactBanner";
 import { useLocation } from "react-router-dom";
 
+
 const Home = () => {
   const location = useLocation();
 
 
   return (
     <>
+   
       <Hero />
       <AboutMain />
       <Banner />
