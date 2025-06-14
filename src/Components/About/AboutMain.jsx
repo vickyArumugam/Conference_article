@@ -51,7 +51,7 @@ const About = () => {
             Our mission is to inform, educate, and inspire our readers with content that matters.
           </p>
           <p className="text-gray-600 mt-4 text-lg text-justify  p-4 lg:p-0">
-            Founded in 2019, ArticleHub started with a simple idea: to create a platform where readers could find
+            Founded in 2025, ArticleHub started with a simple idea: to create a platform where readers could find
             well-researched, thoughtful articles on topics that matter. Our team of dedicated writers and editors
             work tirelessly to bring you content that is both informative and engaging.
           </p>

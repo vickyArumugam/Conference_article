@@ -9,11 +9,11 @@ const PeerReviewHero = () => {
           {[{
             title: "Role of the Journal Editor",
             description:
-              "The editor decides whether your paper fits the aims and scope of the journal, then selects the reviewers and guides the paper through several revision stages."
+              "The editor decides whether your paper fits the aims and scope of the journal, then selects the reviewers and guides the paper through several revision stages Throughout the peer review process, the editor acts as a mediator between authors and reviewers, offering guidance on revisions to improve the clarity, rigor, and contribution of the manuscript. This often involves multiple rounds of feedback and refinement."
           }, {
             title: "Role of the Reviewer",
             description:
-              "Your reviewers will read your paper or case study and teaching note and provide the journal editor with detailed and useful comments."
+              "Your reviewers will read your paper or case study and teaching note and provide the journal editor with detailed and useful comments Reviewers play a pivotal role in maintaining the academic quality and credibility of a journal. Your reviewers will read your paper, case study, and accompanying teaching note carefully, assessing the clarity, originality, methodology, and overall contribution to the field. strengths and areas for improvement in your work."
           }].map((item, index) => (
             <div key={index} className="bg-white shadow-lg rounded-lg p-6 w-full">
               <h2 className="text-2xl font-bold">{item.title}</h2>

@@ -19,7 +19,7 @@ const About = () => {
       <WhyUs />
       <ButtonLeft/>
       <ContactBanner />
-      <Sponsors />
+      <Sponsors/>
     </>
   );
 };

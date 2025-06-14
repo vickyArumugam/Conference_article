@@ -27,7 +27,7 @@ export default function EarlyCiteSection() {
 
         {/* Features Section */}
         <div className="p-6">
-          <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900 my-4 text-center md:mb-10">
+          <h3 className="text-2xl sm:text-3xl font-semibold text-gray-900 my-4 text-center md:mb-6">
             Your article will be
           </h3>
           <ul className="flex flex-wrap justify-center items-center space-x-4 sm:space-x-6 md:space-x-8">
@@ -41,7 +41,7 @@ export default function EarlyCiteSection() {
                   <span className="leading-none">{item}</span>
                 </li>
                 {index !== features.length - 1 && (
-                  <span className="text-gray-600 text-5xl font-bold mb-2 md:mb-0 hidden lg:block">
+                  <span className="text-gray-600 text-5xl font-bold mb-2 md:mb-2 md:ml-2 hidden lg:block">
                     →
                   </span>
                 )}

@@ -8,23 +8,26 @@ import { FaStar } from "react-icons/fa";
 const testimonials = [
   {
     name: "Engr. PSAH",
-    image: "/images/vecteezy_young-indian-student-holding-diary-file-in-hand_5219735.webp",
+    image: "/images/indian-student.webp",
     rating: 5,
-    review: "Overall I am satisfied with the workload this season.\nThe team was professional and highly skilled Overall I am satisfied with the workload this season.\nThe team was professional and highly skilled.",
+    review:
+      "Overall I am satisfied with the workload this season.\nThe team was professional and highly skilled Overall I am satisfied with the workload this season.\nThe team was professional and highly skilled.",
     source: "TrustPilot",
   },
   {
     name: "Engr. Anisa",
-    image: "/images/guy-asking-coworker-for-coffee-attractive-friendly-female-with-ginger-hair-and-beautiful-clean-skin-e1699027866487.webp",
+    image: "/images/female-with-ginger.webp",
     rating: 5,
-    review: "Overall I am satisfied with the workload this season.\nThe team was professional and highly skilled Overall I am satisfied with the workload this season.\nThe team was professional and highly skilled.",
+    review:
+      "Overall I am satisfied with the workload this season.\nThe team was professional and highly skilled Overall I am satisfied with the workload this season.\nThe team was professional and highly skilled.",
     source: "TrustPilot",
   },
   {
     name: "Engr. Charlotte",
-    image: "/images/vecteezy_portrait-of-woman-university-student-holding-book-in-studio_2629904.webp",
+    image: "/images/university-student.webp",
     rating: 5,
-    review: "Overall I am satisfied with the workload this season.\nThe team was professional and highly skilled Overall I am satisfied with the workload this season.\nThe team was professional and highly skilled.",
+    review:
+      "Overall I am satisfied with the workload this season.\nThe team was professional and highly skilled Overall I am satisfied with the workload this season.\nThe team was professional and highly skilled.",
     source: "TrustPilot",
   },
 ];
@@ -42,11 +45,11 @@ const TestimonialCarousel = () => {
           modules={[Navigation, Pagination, Autoplay]}
           spaceBetween={40}
           slidesPerView={1}
-          loop={true} // Enables infinite loop
+          loop={true}
           navigation
           pagination={{ clickable: true }}
-          autoplay={{ delay: 3000, disableOnInteraction: false }} // Auto-move every 3s
-          className="overflow-hidden"
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          className="overflow-hidden relative"
         >
           {testimonials.map((testimonial, index) => (
             <SwiperSlide key={index}>
@@ -69,7 +72,7 @@ const TestimonialCarousel = () => {
                   <p className="text-lg text-gray-700 italic whitespace-pre-line">
                     {testimonial.review}
                   </p>
-                  <p className="text-base text-gray-500 my-3">
+                  <p className="text-base text-gray-500 my-6">
                     Published on{" "}
                     <span className="text-blue-600 font-medium">{testimonial.source}</span>
                   </p>
@@ -78,6 +81,18 @@ const TestimonialCarousel = () => {
             </SwiperSlide>
           ))}
         </Swiper>
+
+        {/* Mobile-only pagination margin */}
+        <style>
+          {`
+            @media (max-width: 768px) {
+              .swiper-pagination {
+                margin-top: 100px !important;
+                position: relative !important;
+              }
+            }
+          `}
+        </style>
       </div>
     </section>
   );

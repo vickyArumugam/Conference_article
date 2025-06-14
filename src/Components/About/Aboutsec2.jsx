@@ -58,7 +58,7 @@ const AboutSection = () => {
       <div className="relative lg:w-[50%] flex justify-center mt-12 lg:mt-0 group">
         <div className="absolute -top-2 -left-2 md:-top-4 md:-left-4 w-60 h-40 md:w-72 md:h-48 lg:w-96 lg:h-64 bg-blue-100 rounded-xl shadow-xl transition-all duration-500">
           <img
-            src="/images/vecteezy_multiethnic-startup-business-team-on-meeting_12108097.webp"
+            src="/images/startup-business-team.webp"
             alt="Professional Team"
             className="w-full h-full object-cover rounded-xl drop-shadow-lg"
           />
@@ -66,7 +66,7 @@ const AboutSection = () => {
 
         <div className="relative w-60 h-40 md:w-72 md:h-48 lg:w-96 lg:h-64 bg-white rounded-xl shadow-xl transform translate-x-6 translate-y-6 transition-all duration-500">
           <img
-            src="/images/vecteezy_young-asian-students-in-casual-wear-do-homework-and-use-a_20808709.jpg"
+            src="/images/young-asian-students.jpg"
             alt="Team Meeting"
             className="w-full h-full object-cover rounded-xl drop-shadow-lg"
           />

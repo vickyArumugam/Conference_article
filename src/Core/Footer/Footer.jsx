@@ -1,7 +1,12 @@
 // Footer.jsx
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaFacebookF, FaXTwitter, FaInstagram, FaLinkedin } from "react-icons/fa6";
+import {
+  FaFacebookF,
+  FaXTwitter,
+  FaInstagram,
+  FaLinkedin,
+} from "react-icons/fa6";
 
 const Footer = () => {
   return (
@@ -17,21 +22,29 @@ const Footer = () => {
               className="w-24 mx-auto sm:mx-0"
             />
             <p className="text-gray-400 text-sm md:text-base leading-relaxed">
-              We are committed to delivering high-quality solutions for our customers, ensuring innovation and excellence in every project.
+              We are committed to delivering high-quality solutions for our
+              customers, ensuring innovation and excellence in every project.
             </p>
           </div>
 
           {/* Policies Section */}
           <div className="space-y-4">
-            <p className="font-semibold text-gray-300 text-base md:text-lg">Policies</p>
+            <p className="font-semibold text-gray-300 text-base md:text-lg">
+              Policies
+            </p>
             <ul className="space-y-2 text-sm md:text-base">
-              {["Privacy Policy", "Cookie Policy", "Terms of Use", "Refunds Policy"].map((item) => (
-                <li key={item}>
+              {[
+                { label: "Privacy Policy", path: "/privacy-policy" },
+                { label: "Cookie Policy", path: "/cookie-policy" },
+                { label: "Terms of Use", path: "/terms-of-use" },
+                { label: "Refunds Policy", path: "/refunds-policy" },
+              ].map((item) => (
+                <li key={item.label}>
                   <Link
-                    to="#"
+                    to={item.path}
                     className="hover:text-gray-200 transition-colors duration-300"
                   >
-                    {item}
+                    {item.label}
                   </Link>
                 </li>
               ))}
@@ -40,54 +53,61 @@ const Footer = () => {
 
           {/* Quick Links Section */}
           <div className="space-y-4">
-            <p className="font-semibold text-gray-300 text-base md:text-lg">Quick Links</p>
+            <p className="font-semibold text-gray-300 text-base md:text-lg">
+              Quick Links
+            </p>
             <ul className="space-y-2 text-sm md:text-base">
               <li>
-                <Link to="/" className="hover:text-gray-200 transition-colors duration-300">
+                <Link
+                  to="/"
+                  className="hover:text-gray-200 transition-colors duration-300"
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="hover:text-gray-200 transition-colors duration-300">
+                <Link
+                  to="/about"
+                  className="hover:text-gray-200 transition-colors duration-300"
+                >
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/register" className="hover:text-gray-200 transition-colors duration-300">
+                <Link
+                  to="/register"
+                  className="hover:text-gray-200 transition-colors duration-300"
+                >
                   Register
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-gray-200 transition-colors duration-300">
+                <Link
+                  to="/contact"
+                  className="hover:text-gray-200 transition-colors duration-300"
+                >
                   Contact Us
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Contact Section */}
-          <div className="space-y-4">
-            <p className="font-semibold text-gray-300 text-base md:text-lg">Contact</p>
-            <ul className="space-y-2 text-sm md:text-base">
-              <li>Email: contact@example.com</li>
-              <li>Phone: +123 456 7890</li>
-              <li>Address: 123 Street, City, Country</li>
-            </ul>
-          </div>
-
+          
           {/* Social Media Section */}
           <div className="space-y-4">
-            <p className="font-semibold text-gray-300 text-base md:text-lg">Follow Us</p>
+            <p className="font-semibold text-gray-300 text-base md:text-lg">
+              Follow Us
+            </p>
             <div className="flex justify-center sm:justify-start gap-4">
               <a
-                href="https://www.facebook.com"
+                href="https://www.facebook.com/people/Articles-Publication/61576180886635/"
                 className="text-gray-500 hover:text-blue-600 text-xl md:text-2xl transition-transform transform hover:scale-110 duration-300"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FaFacebookF />
               </a>
-              <a
+              {/* <a
                 href="https://twitter.com"
                 className="text-gray-500 hover:text-blue-400 text-xl md:text-2xl transition-transform transform hover:scale-110 duration-300"
                 target="_blank"
@@ -110,16 +130,30 @@ const Footer = () => {
                 rel="noopener noreferrer"
               >
                 <FaLinkedin />
-              </a>
+              </a> */}
             </div>
           </div>
+
+          {/* Contact Section */}
+          <div className="space-y-4">
+            <p className="font-semibold text-gray-300 text-base md:text-lg">
+              Contact
+            </p>
+            <ul className="space-y-2 text-sm md:text-base">
+              {/* <li>Email: articlepublish.com</li> */}
+               <li>Email: thearticlespublication@gmail.com</li>
+              <li>Phone: +91 8072733287</li>
+              <li>Address: Chennai</li>
+            </ul>
+          </div>
+
         </div>
       </div>
 
       {/* Footer Bottom (Copyright Notice) */}
       <div className="border-t border-gray-700 py-4 text-center text-sm md:text-base">
         <p className="px-4">
-          © 2008 - {new Date().getFullYear()} All rights reserved.
+          © {new Date().getFullYear()} All rights reserved.
         </p>
       </div>
     </footer>

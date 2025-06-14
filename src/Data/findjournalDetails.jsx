@@ -12,7 +12,7 @@ const journals = [
     id: 2,
     name: "Journal of Data Science & Analytics",
     category: "Data Science",
-    coverImage: "/images/vecteezy_ai-businessman-showing-concept-connection-innovation_45921070.webp",
+    coverImage: "/images/vecteezy_cyber-security-concept-with-padlock-on-blue-background-3d_22653845.webp",
     acceptanceRate: "14.6%",
     timeToFirstDecision: "46 days",
     impactFactor: "4.8"
@@ -30,7 +30,7 @@ const journals = [
     id: 4,
     name: "Journal of Environmental Studies",
     category: "Environmental Science",
-    coverImage: "/images/vecteezy_ai-businessman-showing-concept-connection-innovation_45921070.webp",
+    coverImage: "/images/vecteezy_close-up-of-hand-placing-a-bitcoin-on-stacked-coins_52822398.jpeg",
     acceptanceRate: "12.5%",
     timeToFirstDecision: "42 days",
     impactFactor: "4.5"
@@ -57,7 +57,7 @@ const journals = [
     id: 7,
     name: "Neuroscience and Cognition",
     category: "Neuroscience",
-    coverImage: "/images/vecteezy_ai-businessman-showing-concept-connection-innovation_45921070.webp",
+    coverImage: "/images/vecteezy_coins-in-front-of-a-blackboard_2009315.webp",
     acceptanceRate: "9.2%",
     timeToFirstDecision: "40 days",
     impactFactor: "7.3"
